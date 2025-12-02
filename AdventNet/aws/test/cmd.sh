@@ -1,4 +1,4 @@
-javac --patch-module java.base="../lib/wmisotrace.jar:../lib/iotrace.jar" -cp "../lib/*:." -d ./out ./*/*.java
+javac --patch-module java.base="../lib/wmisotrace.jar:../lib/iotrace.jar" -cp "../lib/*:." -d ./out com/zoho/*/*.java
 
 java --patch-module java.base="../lib/wmisotrace.jar:../lib/iotrace.jar" -cp "../lib/*:./out"  org.junit.platform.console.ConsoleLauncher --select-class com.zoho.entities.test.URLFileTest
 
