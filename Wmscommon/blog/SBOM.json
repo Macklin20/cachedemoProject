@@ -1,0 +1,398 @@
+{
+    "specVersion": "1.4",
+    "metadata": {
+        "tools": [
+            {
+                "vendor": "Zoho",
+                "name": "Hacksaw"
+            },
+            {
+                "vendor": "Owasp",
+                "name": "Dependency Checker",
+                "version": "7.4.1"
+            }
+        ],
+        "timestamp": "2025-09-08T12:46:29.156790+05:30"
+    },
+    "components": [
+        {
+            "bom-ref": "Wmscommon/lib/AdvWmsCommon.jar",
+            "name": "AdvWmsCommon.jar",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "60c76480a1feaf76212fcbf272620a6f"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "851a67bd0b8d713ee9a1d6ef098be0dfd544a891"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "a871dde21a1231ea20878783b8e8ece5c30ce16fb21c570b5d3873a812bd3f9e"
+                }
+            ],
+            "type": "library",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "first_party"
+                }
+            ]
+        },
+        {
+            "bom-ref": "Wmscommon/lib/ZohoPEX.jar",
+            "name": "ZohoPEX.jar",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "03bfccdb0e5ff7903b34ff1c0c607305"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "98b9d597c8f355b1715c72ca5e3279e7e6f5a31b"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "25c5751cfe5384cdf070d2a204be909f2c48e81b459d4a3f8efb124a9f4f0a30"
+                }
+            ],
+            "type": "library",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "first_party"
+                }
+            ]
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jakarta.activation.jar",
+            "name": "jakarta.activation",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "e8fe27b2ed2bec52b561e4e0348a1a9f"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "f4e7519148dee347c7666f336210deedb8aca09d"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "db9c7e30f4d61ec33fd47942c9b7cf6e094025e7d5d8e20db73fce5a912a4366"
+                }
+            ],
+            "purl": "pkg:maven/com.sun.activation/jakarta.activation@2.0.0",
+            "type": "library",
+            "version": "2.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "com.sun.activation"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jakarta.xml.bind-api.jar",
+            "name": "jakarta.xml.bind-api",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "78cf2b809e4daa0beff13efdad12da76"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "9275db6e21287df61690989254a0b46d8d31e99a"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "0037ab1eba33a969b36119c61a9f28313460a85eea9b800470a70cb2227d35f4"
+                }
+            ],
+            "purl": "pkg:maven/jakarta.xml.bind/jakarta.xml.bind-api@3.0.0",
+            "type": "library",
+            "version": "3.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "jakarta.xml.bind"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jaxb-core.jar",
+            "name": "jaxb-core",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "b3095fb0bcc4ac39c373f2a5168a5987"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "6aae6e87468c15dfe5fffcb9039d05469b8ef318"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "b1e4b8137505333ed59b08e748c46c3894795fa1d524d042354609fd9ca6754f"
+                }
+            ],
+            "purl": "pkg:maven/com.sun.xml.bind/jaxb-core@3.0.0",
+            "type": "library",
+            "version": "3.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "com.sun.xml.bind"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jaxb-impl.jar",
+            "name": "jaxb-impl",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "ba0d3f0dfdd2f16951734b3c87cf073f"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "da6cc5533db0f41078f424f3bc84d0f8c28f5f9c"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "6d5a3cddb6948b6adc6707b121d627c3b50bc23334e072e8ddd8e82b894f384e"
+                }
+            ],
+            "purl": "pkg:maven/com.sun.xml.bind/jaxb-impl@3.0.0",
+            "type": "library",
+            "version": "3.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "com.sun.xml.bind"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jaxb-jxc.jar",
+            "name": "jaxb-jxc",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "ee2e717f328402acc93d0ecf3bef4143"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "65dac32423b24276ddeade81821c0a3be72e6ad5"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "b904c2dba76abc497d1ce4326549397b3489d60b17d7986021533180a3db9186"
+                }
+            ],
+            "purl": "pkg:maven/com.sun.xml.bind/jaxb-jxc@3.0.0",
+            "type": "library",
+            "version": "3.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "com.sun.xml.bind"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/jaxb-xjc.jar",
+            "name": "jaxb-xjc",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "c1a783ee14f0cb41654b88e533d01c4f"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "1925fb7f6a11aa2312ea6f82d0fa3e91b6869fc3"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "fc2875c9fb4b812c487f810a19670b174d1a366bf6c8747e1e86bb1dfb60703c"
+                }
+            ],
+            "purl": "pkg:maven/com.sun.xml.bind/jaxb-xjc@3.0.0",
+            "type": "library",
+            "version": "3.0.0",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "com.sun.xml.bind"
+        },
+        {
+            "licenses": [
+                {
+                    "license": {
+                        "name": "Public Domain",
+                        "url": "https://github.com/stleary/JSON-java/blob/master/LICENSE"
+                    }
+                }
+            ],
+            "bom-ref": "Wmscommon/lib/json.jar",
+            "name": "json",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "1a0702c57783ce9e948252c34644f328"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "e22e0c040fe16f04ffdb85d851d77b07fc05ea52"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "0f18192df289114e17aa1a0d0a7f8372cc9f5c7e4f7e39adcf8906fe714fa7d3"
+                }
+            ],
+            "purl": "pkg:maven/org.json/json@20231013",
+            "type": "library",
+            "version": "20231013",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "third_party"
+                }
+            ],
+            "group": "org.json"
+        },
+        {
+            "bom-ref": "Wmscommon/lib/wmsapisecurity.jar",
+            "name": "wmsapisecurity.jar",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "197d1a8b724f479a8401d6e4495dd442"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "297341dcac7e1192f6dec59bea2bca9a8b35e3db"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "a0b72c95205e7d0e999b301ca223aa1f686a48f9d67e9585e98db592096cc455"
+                }
+            ],
+            "type": "library",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "first_party"
+                }
+            ]
+        },
+        {
+            "bom-ref": "Wmscommon/lib/wmscommonsecurity.jar",
+            "name": "wmscommonsecurity.jar",
+            "hashes": [
+                {
+                    "alg": "MD5",
+                    "content": "3a29d2032532503132a8ab4a732b2aa2"
+                },
+                {
+                    "alg": "SHA-1",
+                    "content": "5d068697d8576db65b51d34c6baced148a5e8ecd"
+                },
+                {
+                    "alg": "SHA-256",
+                    "content": "edb888e975871a345be1c47fe344df46f12d8c50f4cdb35ca5cbbd2cc6877fdd"
+                }
+            ],
+            "type": "library",
+            "properties": [
+                {
+                    "name": "ownership",
+                    "value": "first_party"
+                }
+            ]
+        }
+    ],
+    "bomFormat": "CycloneDX",
+    "version": 1,
+    "dependencies": [
+        {
+            "ref": "Wmscommon/lib/AdvWmsCommon.jar",
+            "dependsOn": [
+                "Wmscommon/lib/wmscommonsecurity.jar",
+                "Wmscommon/lib/json.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/ZohoPEX.jar",
+            "dependsOn": [
+                "Wmscommon/lib/AdvWmsCommon.jar",
+                "Wmscommon/lib/json.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/jakarta.activation.jar"
+        },
+        {
+            "ref": "Wmscommon/lib/jakarta.xml.bind-api.jar",
+            "dependsOn": [
+                "Wmscommon/lib/jakarta.activation.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/jaxb-core.jar",
+            "dependsOn": [
+                "Wmscommon/lib/jakarta.xml.bind-api.jar",
+                "Wmscommon/lib/jakarta.activation.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/jaxb-impl.jar",
+            "dependsOn": [
+                "Wmscommon/lib/jakarta.xml.bind-api.jar",
+                "Wmscommon/lib/jakarta.activation.jar",
+                "Wmscommon/lib/jaxb-core.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/jaxb-jxc.jar",
+            "dependsOn": [
+                "Wmscommon/lib/jakarta.xml.bind-api.jar",
+                "Wmscommon/lib/jaxb-xjc.jar",
+                "Wmscommon/lib/jaxb-impl.jar",
+                "Wmscommon/lib/jaxb-core.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/jaxb-xjc.jar",
+            "dependsOn": [
+                "Wmscommon/lib/jakarta.xml.bind-api.jar",
+                "Wmscommon/lib/jakarta.activation.jar",
+                "Wmscommon/lib/jaxb-core.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/json.jar"
+        },
+        {
+            "ref": "Wmscommon/lib/wmsapisecurity.jar",
+            "dependsOn": [
+                "Wmscommon/lib/wmscommonsecurity.jar",
+                "Wmscommon/lib/AdvWmsCommon.jar"
+            ]
+        },
+        {
+            "ref": "Wmscommon/lib/wmscommonsecurity.jar",
+            "dependsOn": [
+                "Wmscommon/lib/AdvWmsCommon.jar"
+            ]
+        }
+    ]
+}

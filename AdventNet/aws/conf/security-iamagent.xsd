@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:redefine schemaLocation="security.xsd">
+		<xs:attributeGroup name="urlGroup">
+			<xs:attributeGroup ref="urlGroup"/>
+     		<xs:attribute name="customapi-header" type="xs:string"/>
+     		<xs:attribute name="customapi-param" type="xs:string"/>
+     		<xs:attribute name="custom-oauthservices">
+     			<xs:simpleType>
+          			<xs:restriction base="xs:string">
+            		<xs:pattern value="[a-zA-Z0-9,_\-\.]+"/>
+          		</xs:restriction>
+        		</xs:simpleType>
+     		</xs:attribute>
+     		<xs:attribute name="custom-oauthscopes" >
+     			<xs:simpleType>
+          			<xs:restriction base="xs:string">
+            			<xs:pattern value="[a-zA-Z0-9,_\-\.]+"/>
+          			</xs:restriction>
+        		</xs:simpleType>
+     		</xs:attribute>
+     		<xs:attribute name="reauth-scope" >
+     			<xs:simpleType>
+          			<xs:restriction base="xs:string">
+            			<xs:pattern value="[a-zA-Z0-9,_\-\.]+"/>
+          			</xs:restriction>
+        		</xs:simpleType>
+     		</xs:attribute>
+     		<xs:attribute name="reauth-response">
+				<xs:simpleType>
+       				<xs:restriction base="xs:string">
+	       				<xs:pattern value="code"/>
+        			</xs:restriction>
+     			</xs:simpleType>
+     		</xs:attribute>
+     		<xs:attribute name="reauth-time">
+     			<xs:simpleType>
+       				<xs:restriction base="xs:string">
+    					<xs:pattern value="custom|([0-9]+)"/>
+        			</xs:restriction>
+     			</xs:simpleType>
+     		</xs:attribute>
+     		<xs:attribute name="oauth-type">
+     			<xs:simpleType>
+       				<xs:restriction base="xs:string">
+    					<xs:pattern value="custom|child|child_api_key"/>
+        			</xs:restriction>
+     			</xs:simpleType>
+     		</xs:attribute>
+		</xs:attributeGroup>
+	</xs:redefine>
+</xs:schema>

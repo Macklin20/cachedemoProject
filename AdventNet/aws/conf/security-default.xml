@@ -1,0 +1,21 @@
+<!-- $Id$ -->
+<security name="AWServer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="security.xsd">
+
+	
+	<urls>
+	
+		<!-- ============== Default calls ============== -->
+
+		<url path="/_app/health" internal="true" threshold="60" duration="1" lock-period="1" description="App check (Test)"/>
+		<url path="/index.html" threshold="60" duration="1" lock-period="1" description="To display index page"/>
+		<url path="/grid/login/servercheck.jsp" internal="true" threshold="60" duration="1" lock-period="1"  description="For AWS server check"/>
+		<url path="/selectordebug" internal="true" threshold="60" duration="1" lock-period="1" description="To get selector debug info">
+			<param name="port" regex="port"/>
+		</url>
+		<url path="/refreshfilelist" internal="true" threshold="60" duration="1" lock-period="1" description="To refresh and cache new list of file in the engine">
+			<param name="enginename" regex="enginename"/>
+		</url>	
+	</urls>
+
+
+</security>

@@ -1,0 +1,11 @@
+Module=ZOHOWMS_COMMON
+SourceCoLabel=master
+BuildDate=Sep_08_2025
+BuildTime=12:45:43
+#BuildLabel=ZOHOWMS_COMMON_Sep_08_2025
+build-timestamp= 1757315755
+StaticVersion=
+Current_Build_Url=https://build.zohocorp.com/zoho/zohowms_common/webhost/master/Sep_08_2025
+Source_Changeset=7e43a8494ea176762fe8428349f2500dd154324d
+Build_Comment=
+BuildLabel=ZOHOWMS_COMMON_4.14.0

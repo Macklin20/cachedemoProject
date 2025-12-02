@@ -1,0 +1,69 @@
+<b>WCP(3)						Component Commands Manual							WCP(3)</b>
+
+NAME
+        wcp - display or trigger a functionality in wcp
+
+SYNOPSIS
+	<b>wcp -opr refresh</b> [<b>-pn</b> <u>POOLNAME</u>] | [<b>-cn</b> <u>CLUSTERNAME</u>]
+	<b>wcp -opr refreshapi</b> [<b>-api</b> <u>APINAME</u>] [<b>-prd</b> <u>PRD</u>] [<b>-ip</b> <u>IP</u>]
+	<b>wcp -opr arb</b> [<b>-prd</b> <u>PRD</u>] [<b>-ips</b> <u>IPS</u>]
+	<b>wcp -opr info</b> <b>-pn</b> <u>POOLNAME</u>
+	<b>wcp -opr block</b> <b>-pn</b> <u>POOLNAME</u> <b>-ip</b> <u>IP</u>
+	<b>wcp -opr unblock</b> <b>-pn</b> <u>POOLNAME</u> <b>-ip</b> <u>IP</u>
+	<b>wcp -opr blocksrv</b> <b>-cn</b> <u>CLUSTERNAME</u> [<b>-pn</b> <u>POOLNAME</u>] [<b>-ip</b> <u>IP</u>]
+	<b>wcp -opr blockapi</b> <b>-api</b> <u>APINAME</u> <b>-prd</b> <u>PRD</u> [<b>-pn</b> <u>POOLNAME</u>] [<b>-ip</b> <u>IP</u>]
+	<b>wcp -opr unblocksrv</b> <b>-cn</b> <u>CLUSTERNAME</u> [<b>-pn</b> <u>POOLNAME</u>] [<b>-ip</b> <u>IP</u>]
+	<b>wcp -opr unblockapi</b> <b>-api</b> <u>APINAME</u> <b>-prd</b> <u>PRD</u> [<b>-pn</b> <u>POOLNAME</u>] [<b>-ip</b> <u>IP</u>]
+	<b>wcp -opr blockinfo</b>
+	<b>wcp -opr getblkips</b> <b>-pn</b> <u>POOLNAME</u>
+	<b>wcp -opr enableaccesslogs</b>
+	<b>wcp -opr disableaccesslogs</b>
+	<b>wcp -opr enableforceclose</b>
+	<b>wcp -opr disableforceclose</b>
+	<b>wcp -opr set</b> [<b>-handler</b> <u>HANDLER</u>] [<b>-core</b> <u>COREPOOLSIZE</u>] [<b>-pn</b> <u>POOLNAME</u>]
+	<b>wcp -opr set</b> [<b>-handler</b> <u>HANDLER</u>] [<b>-max</b> <u>MAXPOOLSIZE</u>] [<b>-pn</b> <u>POOLNAME</u>]
+	<b>wcp -opr set</b> [<b>-handler</b> <u>HANDLER</u>] [<b>-core</b> <u>COREPOOLSIZE</u>] [<b>-max</b> <u>MAXPOOLSIZE</u>] [<b>-pn</b> <u>POOLNAME</u>]
+	<b>wcp -opr set</b> [<b>-maxconn</b> <u>MAXCONNPERIP</u>] [<b>-pn</b> <u>POOLNAME</u>] 
+	<b>wcp -opr set</b> [<b>-minconn</b> <u>MINCONNPERIP</u>] [<b>-pn</b> <u>POOLNAME</u>]
+	<b>wcp -opr set</b> [<b>-ssl</b> <u>true/false</u>] [<b>-pn</b> <u>POOLNAME</u>]
+	<b>wcp -opr tcount</b>
+	<b>wcp -opr tcount</b> [<b>-d</b>]
+	<b>wcp -opr idbsessions</b>
+	<b>wcp -opr wsstats</b> <b>-pn</b> <u>POOLNAME</u> [<b>-nio</b> <u>true/false</u>] [<b>-hr</b> <u>true/false</u>] [<b>-sid</b> <u>SID</u>]
+	<b>wcp -opr writedummy</b> <b>-pn</b> <u>POOLNAME</u> [<b>-sid</b> <u>SID</u>]
+
+DESCRIPTION
+	- <b>refresh</b>,		refresh seeds of poolName or clusterName (server to server communication)
+	- <b>refreshapi</b>,		refresh seeds of api, if refeshseed is called without any argument it refreshes all api and if apiname alone is given it refreshes all prds (it will work only for servers with single api)
+				eg, for api names like <b>PNSAPI</b>, <b>ACSAPI</b>,<b>wmsapi</b>, <b>IP</b> is optional for this command which refreshes api in specified ip. 
+	- <b>arb</b>,			display all information about the number of sessions connected in  "/api" context
+	- <b>info</b>,			display all connpool-configurations about given poolname
+	- <b>block</b>,		blocks a <b>IP</b> of given <b>POOLNAME</b> to use on client side which blocks outgoing data
+	- <b>unblock</b>,		unblocks a <b>IP</b> of given <b>POOLNAME</b>, if POOLNAME exists
+	- <b>getblkips</b>,		display count of dropped packets in a given <b>POOLNAME</b>
+	- <b>blocksrv</b>,		blocks a complete cluster if <b>CLUSTERNAME</b> only is given and clustername is mandatory
+				blocks data from specific <b>IP</b> if IP is the only parameter given or blocks poolName from all IPs if only poolname is given of the given cluster.
+				blocks data from given poolName of that particular given IP of the cluster if both are given. to use on server side to block incoming data
+	- <b>blockapi</b>,		blocks a complete PRD if <b>APINAME</b> and <b>PRD</b> only is given and apiname, prd is mandatory
+				blocks data from specific <b>IP</b> if IP is the only parameter given or blocks poolName from all IPs if only poolname is given of the given apiname-prd.
+				blocks data from given poolName of that particular given IP of the apiname-prd if both are given. to use on server side to block incomming data
+	- <b>unblocksrv</b>,		unblock a complete  if <b>CLUSTERNAME</b> only is given and clustername is mandatory or unblock all ips of a poolName if poolName only is given,
+				unblocks the specific <b>IP</b> if you give IP only it works if you blocked the particular IP.
+	- <b>unblockapi</b>,		unblock a complete api-prd if  <b>APINAME</b> and <b>PRD</b> only is given, and  <b>APINAME</b> and <b>PRD</b> is mandatory or unblock all ips of a poolName if poolName only is given,
+				unblocks the specific <b>IP</b> if you give IP only it works if you blocked the particular IP.
+	- <b>blockinfo</b>		shows the blocked Cluster, PoolName, IP Info.
+	- <b>disableaccesslogs</b>,	disables wcp access logger
+	- <b>enableforceclose</b>,	enables wcp force close connection (closes unnecessary connections)
+	- <b>disableforceclose</b>,	disables unnecessary connection close
+	- <b>set</b>,			set the values of thread size of <b>HANDLERS</b> such as 
+				<b>cb</b> - callBackHandler
+				<b>res</b>- ResponseHandler
+				<b>idbcb</b> - IDBCallBackHandler
+				set the value of corePoolSize, maxPoolSize or both.
+				also sets the max connection per ip , min connection per ip and enable or disable ssl (false / true)
+	- <b>tcount</b>,		displays the total thread count used by wcp, [-d for detailed information about threads]
+	- <b>idbsessions</b>,	displays idb's total sessions count and its detailed session map connection pool wise.
+	- <b>wsstats</b>,       displays websocetstatus of a specified poolname or sid if sid is given, here <b>POOLNAME</b> is mandatory, -hr for human readability, -nio for nio stats
+	- <b>writedummy</b>,    writes dummy packet in the session if sid is given or for entire connpool if sid is not given
+	*<b>IPS</b> should be in <b>','</b> separated format
+

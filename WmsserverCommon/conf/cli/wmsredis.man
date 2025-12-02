@@ -1,0 +1,21 @@
+WMSRedis Command
+
+NAME
+        wmsredis - to debug redis
+
+SYNOPSIS
+	    <b>wmsredis</b> [<b>-p</b> <u>POOL_NAME</u>]
+	    <b>wmsredis -view</b> [<b>-p</b> <u>POOL_NAME</u>]
+	    <b>wmsredis -update</b> <b>-p</b> <u>POOL_NAME</u> <b>-k</b> <u>KEY</u> <b>-v</b> <u>VALUE</u>
+	    <b>wmsredis -reinit</b> <b>-p</b> <u>POOL_NAME</u>
+	    <b>wmsredis -slowlogs</b> [<u>COUNT</u>] <b>-p</b> <u>POOL_NAME</u> [<b>-sort</b>]
+	    <b>wmsredis -info</b> [<u>info_param</u>] <b>-p</b> <u>POOL_NAME</u>
+
+DESCRIPTION
+        -           = shows current redis status for all pools
+        - view      = show redisCluster config.
+        - update    = update -p (pool) config with -k (key) & -v (value)
+        - reinit    = reinitialise -p (pool) with current config
+        - slowlogs  = show slow logs for count -slowlogs 10 (1 ≥ count ≥ 100) -sort (based on exec_time)
+        - info      = Returns information and statistics about the server
+                        example: wmsredis -info (info_param) -p pool

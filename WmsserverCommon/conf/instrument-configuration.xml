@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE instrument >
+<!-- define a dtd and error handler -->
+<instrumentation>
+	<!-- all configurations imply OR condition.  If any one condition is met request is sent to server-->
+
+	<Constants trace_length="10" no_of_rows_iterated="100" has_http_call="0" connection_call_duration="2000" metric_queue_size="1000" metric_data_size="40000" metric_grouper_size="200" cpu-hogging-threshold-web="30000" cpu-hogging-percentage-web="90" cpu-hogging-threshold-schedule="60000" cpu-hogging-percentage-schedule="90" inner-array-size="100" outer-array-size="100" max-params-per-packet="50"/> <!--TODO move has_http_call to request after discussing -->
+	<!-- if values of request   are greater than the values configured here and any one matches, it will be sent to monitoring server , less than is not supported -->
+	<Request type="WEB_REQUEST" duration="1000" has-error="0" no-of-remote-calls="10" bytes-in="2" bytes-out="2" memory-allocated="2"/>
+	<Request type="SCHEDULE_REQUEST" duration="100000" has-error="0" no-of-remote-calls="100" bytes-in="2" bytes-out="2" instrument-needed="true" memory-allocated="20"/>
+	<Request type="APP_REQUEST" duration="1000" has-error="0" no-of-remote-calls="10" bytes-in="2" bytes-out="2" memory-allocated="20"/>
+
+
+</instrumentation>
+
+<!--$Id$-->

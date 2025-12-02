@@ -1,0 +1,9 @@
+render=json
+usage=wmstpe [-name name] [-opr opr] [-core core] [-max max] [-time time] [-maxqueuelimit maxqueuelimit] [-tpe tpe]
+-name=name
+-opr=opr
+-core=core
+-max=max
+-time=time
+-maxqueuelimit=maxqueuelimit
+-tpe=tpe
