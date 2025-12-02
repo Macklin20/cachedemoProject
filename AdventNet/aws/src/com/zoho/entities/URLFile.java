@@ -4,6 +4,7 @@ public class URLFile
 {
 	private static String fileName;
 
+
 	public URLFile(String fileName)
 	{		
 		if(fileName == null)
