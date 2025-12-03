@@ -1,0 +1,94 @@
+TES Command
+
+NAME
+        tes - TaskExecutorService Hanlder
+
+<b>SYNOPSIS</b>
+
+	<b>tes</b> [<b>-opr</b> <u>iso</u>]
+	<b>tes</b> [<b>-opr</b> <u>isostats</u>]
+	<b>tes</b> [<b>-opr</b> <u>seqstats</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-prd</b> <u>prd</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-prd</b> <u>prd</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-prd</b> <u>prd</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-rkey</b> <u>rkey</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-rkey</b> <u>rkey</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-rkey</b> <u>rkey</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-id</b> <u>seqid</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-id</b> <u>seqid</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-id</b> <u>seqid</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	<b>tes</b> [<b>-opr</b> <u>iso</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-prd</b> <u>prd</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-prd</b> <u>prd</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-prd</b> <u>prd</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-rkey</b> <u>rkey</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-rkey</b> <u>rkey</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-rkey</b> <u>rkey</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-id</b> <u>seqid</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-id</b> <u>seqid</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-id</b> <u>seqid</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	<b>tes</b> [<b>-opr</b> <u>deiso</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>]
+
+	<b>tes</b> [<b>-opr</b> <u>enableisolation</u>]
+	<b>tes</b> [<b>-opr</b> <u>enableisolation</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>enableisolation</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	<b>tes</b> [<b>-opr</b> <u>disableisolation</u>]
+	<b>tes</b> [<b>-opr</b> <u>disableisolation</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>disableisolation</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>bklg</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>set</u>] [<b>-tm</b> <u>ParallelTaskManager</u>] [<b>-t</b> <u>thread</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>getseqthreads</u>] [<b>-tm</b> <u>SequentialTaskManager</u>] [<b>-te</b> <u>SequentialTaskEngine</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>startseqthreads</u>] [<b>-tm</b> <u>SequentialTaskManager</u>] [<b>-te</b> <u>SequentialTaskEngine</u>] [<b>-id</b> <u>id</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>block</u>]
+	<b>tes</b> [<b>-opr</b> <u>block</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>block</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	<b>tes</b> [<b>-opr</b> <u>block</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>]
+	<b>tes</b> [<b>-opr</b> <u>block</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>] [<b>-prd</b> <u>prd</u>]
+	<b>tes</b> [<b>-opr</b> <u>block</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>] [<b>-rkey</b> <u>rkey</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>unblock</u>] [<b>-tm</b> <u>TaskManager</u>]
+	<b>tes</b> [<b>-opr</b> <u>unblock</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]
+	<b>tes</b> [<b>-opr</b> <u>unblock</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>]
+	<b>tes</b> [<b>-opr</b> <u>unblock</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>] [<b>-prd</b> <u>prd</u>]
+	<b>tes</b> [<b>-opr</b> <u>unblock</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>] [<b>-task</b> <u>task</u>] [<b>-rkey</b> <u>rkey</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>drain</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]  [<b>-c</b> <u>drainCount</u>]
+	<b>tes</b> [<b>-opr</b> <u>drain</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]  [<b>-id</b> <u>seqid</u>] [<b>-c</b> <u>drainCount</u>] 
+	<b>tes</b> [<b>-opr</b> <u>drain</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-te</b> <u>TaskEngine</u>]  [<b>-task</b> <u>task</u>] [<b>-c</b> <u>drainCount</u>]
+	
+	<b>tes</b> [<b>-opr</b> <u>update</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-core</b> <u>COREPOOLSIZE</u>]
+	<b>tes</b> [<b>-opr</b> <u>update</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-max</b> <u>MAXPOOLSIZE</u>]
+	<b>tes</b> [<b>-opr</b> <u>update</u>] [<b>-tm</b> <u>TaskManager</u>] [<b>-core</b> <u>COREPOOLSIZE</u>] [<b>-max</b> <u>MAXPOOLSIZE</u>]
+	
+<b>DESCRIPTION</b>
+
+	This commands is used to handle the taskexecutorservice.
+	
+	- <b>iso,</b>					view parallel and sequential isolation status	and isolate manager, engine, task, seqid, prd and rkey. 
+	- <b>isostats,</b>				view parallel isolation status.
+	- <b>seqstats,</b>				view sequential isolation status.
+	- <b>deiso,</b>				deisolate manager, engine, task, seqid, prd and rkey. 
+	- <b>enableisolation,</b>				enable Isolation for taskmanager and taskengine (Note: Only works for automatic isolation and not for manual isolation).
+	- <b>disableisolation,</b>				disable Isolation for taskmanager and taskengine (Note: Only works for automatic isolation and not for manual isolation).
+	- <b>bklg,</b>					view queue statistics.
+	- <b>set,</b>					sets the isolation thread count for taskmanager.
+	- <b>getseqthreads,</b>				view thread status of taskmanager and taskengine.
+	- <b>startseqthreads,</b>				start threads of taskmanager and taskengine.
+	- <b>block,</b>				view blocked status and block manager, engine, task, prd and rkey. 
+	- <b>unblock,</b>				unblock manager, engine, task, prd and rkey. 
+	- <b>drain</b>					drop taskcount and queue size.
+	- <b>update</b>				update corepoolsize and maxpoolsize of TaskManager.

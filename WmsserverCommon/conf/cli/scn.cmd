@@ -1,0 +1,10 @@
+render=json
+usage=scn [-delete delete] [-opr opr] [-days days] [-prd prd] [-ip] [ip] [-poolname poolname] [-category category] [-listener listener]
+-delete=delete
+-opr=opr
+-days=days
+-prd=prd
+-ip=ip
+-poolname=poolname
+-category=category
+-listener=listener

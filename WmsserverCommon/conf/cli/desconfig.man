@@ -1,0 +1,10 @@
+DesConfig Command
+
+NAME
+        desconfig - DeferredEngine Configuration
+
+SYNOPSIS
+        de - deferredEngine | dt - deferredTime | it - intervalTime 
+
+DESCRIPTION
+        it changes the value of deferredTime or IntervalTime for specified Engine.

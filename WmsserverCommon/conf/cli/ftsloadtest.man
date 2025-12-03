@@ -1,0 +1,29 @@
+<b>ftsloadtest(2)                 		        	File Transfer Service Load Test               				ftsloadtest(2)</u></b>
+
+<b><u>NAME</u></b>
+        ftsloadtest - Do load test to different DCs
+
+<b><u>SYNOPSIS</u></b>
+
+	<b>ftsloadtest -opr put</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-fs</b> <u>FILESIZE</u>] [<b>-cf</b> <u>COPYFILE</u>] [<b>-rt</b> <u>READTIMEOUT</u>] [<b>-ct</b> <u>CONNECTIONTIMEOUT</u>]
+	<b>ftsloadtest -opr get</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-fs</b> <u>FILESIZE</u>] [<b>-cf</b> <u>COPYFILE</u>] [<b>-rt</b> <u>READTIMEOUT</u>] [<b>-ct</b> <u>CONNECTIONTIMEOUT</u>]
+	<b>ftsloadtest -opr status</b> [<b>-rid</b> <u>REQUEST_ID</u>]
+	<b>ftsloadtest -opr verify -fs FILESIZE</b>
+	
+<b><u>DESCRIPTION</u></b>
+	  FTSLoadTest command is used to generate a file and check if the file is transfered across all data centres properly.
+ 
+          <b>-opr</b>       Specify the operation you want to perform, such as put, get, status, or verify
+		  <b>put</b>, 	    Sends a file to specified DC, default size of file is 2MB
+		  <b>get</b>,   	Gets a file from specified DC
+		  <b>status</b>,    Shows the recent data status
+		  <b>verify<b>,     Prints the last line of the written file
+
+          <b>-rid</b>,		Use reqid to see the <b>status of the request</b> sent
+          <b>-dc</b>, 		Sends file to the specified dcname (sendRequestToDc), if not specified, will send to DrDc
+          <b>-cl</b>, 		Sends data to the <b>specified cluster</b>, if not specified will send to same cluster from which command is executed.
+          <b>-fs</b>, 		Creates the file for the <b>specified size (in MB)</b> and sends it, default size will be 2MB.
+          <b>-cf</b>        true | false. If set to true, it means creating a separate copy of the file and transferring it. If set to false,  directly send the original file.
+          <b>-rt</b>        Set the read timeout (in milliseconds) for file transfer or fetch. The default value is 180,000.
+          <b>-ct</b>        Set the connection timeout (in milliseconds) for file transfer or fetch. The default value is 15,000.
+          

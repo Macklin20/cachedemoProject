@@ -1,0 +1,72 @@
+<b>Thread Info</b>
+
+<b>NAME</b>
+	threadinfo - to view basic Thread informations of server.
+
+<b>SYNOPSIS</b>
+	<b>threadinfo </b>
+	<b>threadinfo -d</b>
+	<b>threadinfo -opr start</b>
+	<b>threadinfo -opr stop</b>
+	<b>threadinfo -opr enablelogs</b>
+	<b>threadinfo -opr disablelogs</b>
+	<b>threadinfo -opr stacktraces</b>
+	<b>threadinfo -opr trackexp</b>
+	<b>threadinfo -opr trackerror</b>
+	<b>threadinfo -opr trackdeadlock</b>
+	<b>threadinfo -opr trackthreadcount</b>
+	<b>threadinfo -opr stopexp</b>
+	<b>threadinfo -opr stoperror</b>
+	<b>threadinfo -opr stopdeadlock</b>
+	<b>threadinfo -opr stopthreadcount</b>
+	<b>threadinfo -opr update -count</b>
+	<b>threadinfo -opr memusage</b>
+	<b>threadinfo -opr memusage -count</b>
+	<b>threadinfo -opr cpuusage</b>
+	<b>threadinfo -opr cpuusage -count</b>
+	<b>threadinfo -opr enablecomponentalerts</b>
+	<b>threadinfo -opr disablecomponentalerts</b>
+	
+<b>DESCRIPTION</b>
+
+This command is used to get basic Thread informations like Active Thread Count , Peak Thread Count , Active Thread Count  Percentage etc.	
+	
+	 If no params passed , It will return basic Thread Details.
+	 
+	- <b>d</b>,			Gives a detail information which includes blocked thread count and Deaklock status if present.
+	 
+	- <b>start</b>,		Enables Thread Monitor.
+	  
+	- <b>stop</b>, 		Disables Thread Monitor
+	
+	- <b>enablelogs</b>,		Enables detailed thread block monitor and deadlock logs.
+        
+	- <b>disablelogs</b>,		Disables detailed thread block moniter and deadlock logs.
+	
+	- <b>stacktraces</b>,		View stacktraces.
+	
+	- <b>trackexp</b>,		Track posting exception in chat.
+	
+	- <b>trackerror</b>,		Track posting error in chat.
+	
+	- <b>trackdeadlock</b>,	Track posting deadlock stats in chat.
+	
+	- <b>trackthreadcount</b>,	Track posting high thread usage stats in chat.
+	
+	- <b>stopexp</b>,		Stop posting exception in chat.
+	
+	- <b>stoperror</b>,		Stop posting error in chat.
+	
+	- <b>stopdeadlock</b>,		Stop posting deadlock stats in chat.
+	
+	- <b>stopthreadcount</b>,	Stop posting high thread usage stats in chat.
+	
+	- <b>count</b>,		Update the percentage limit condition for high thread usage stats [Default 80%].
+	
+	- <b>memusage</b>,		View top N memory usage of threads [Default N=10].
+	
+	- <b>cpuusage</b>,		View top N cpu usage of threads [Default N=10].
+	
+	- <b>enablecomponentalerts</b>,		Start component alerts.
+	
+	- <b>disablecomponentalerts</b>		Stop component alerts.

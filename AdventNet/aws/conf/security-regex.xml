@@ -1,0 +1,34 @@
+<!-- $Id$ -->
+<security name="AWServer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="security.xsd">
+	
+	<regexes>
+	<regex name="runtimeopr" value="^(getinfo|audit)$"/>
+	<regex name="mode" value="^(RO|RW|ro|rw)$"/>
+	<regex name="enginename" value="^(default|internal|grid)$"/>
+	<regex name="cmdstring" value="^(Ping)$"/>
+	<regex name="prd" value="^[A-Z]{2}$"/>
+        <regex name="port" value="[0-9]*"/>
+        <regex name="wnet" value="[0-9\.:]*"/>
+	<regex name="numberonly" value="^[0-9]*$"  />
+	<regex name="servertype" value="^[a-zA-Z]*"/>
+        <regex name="conflabel" value="^[a-zA-Z]*"/>
+        <regex name="provtype" value="^(1|2|3|4)$"/>
+	<regex name="stringonly" value="^[A-Za-z]*$"/>
+	<regex name="clustertype" value="^[a-zA-Z0-9\-]*"/>
+	<regex name="schemastring" value="^[A-Za-z0-9]+$"/>
+	<regex name="rx_string"	value="^[a-zA-Z0-9\-_ ]*"/>
+	<regex name="confkey" value="^[a-zA-Z0-9\-\.:]*$"/>
+        <regex name="conftype" value="^(json|properties|all)$"/>
+        <regex name="wmsid" value="^[0-9a\*\$!\+\^_#.@A-Za-z]+$"/>
+        <regex name="prdwmsid" value="^[0-9a\*\$!\+\^_#.@A-Za-z:\s\\\/]+$"/>
+	<regex name="segmentstring" value="^[a-zA-Z0-9\s\+!,.\-:_*\.;]+$"/>
+	<regex name="safestring" value="^[a-zA-Z0-9\s\+?!,()@%.\-:_*\./\\=]+$"/>
+	<regex name="sidstring" value="^[a-zA-Z0-9=%]+$"/>
+        <regex name="rx_boolean" value="^([Tt][Rr][Uu][Ee]|[Ff][Aa][Ll][Ss][Ee])$"/>
+	<regex name="datestring" value="^(\d{1,2}/\d{1,2}/\d{4}\s*\d{1,2}:\d{1,2})$"/>
+	<regex name="stringcomplete" value="^[a-zA-Z0-9\s\+?!,;%()@.\-:_*\./\\=\[\]\|\{\#\}'$`~&quot;&amp;&lt;&gt;\^]+$"/>
+	<regex name="ipaddress" value="^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$"/>
+	</regexes>
+
+
+</security>

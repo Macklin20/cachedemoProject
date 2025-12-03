@@ -1,0 +1,3 @@
+We use the Map.Entry::getValue method reference as the classifier function to group by the country. We state the desired map to collect the grouping into by using LinkedHashMap::new for the mapFactory. Finally, we utilize the Collectors.mapping() method as the downstream collector to extract the keys from our entries to collect into each set.
+
+

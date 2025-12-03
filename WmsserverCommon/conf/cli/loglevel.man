@@ -1,0 +1,21 @@
+<b>LOGLEVEL Command</b>
+
+<b>NAME</b>
+        loglevel - To change loglevel
+
+<b>SYNOPSIS</b>
+        usage = loglevel [-p package] [-c loggername] [-l level]
+
+<b>DESCRIPTION</b>
+
+        - The parameter <b>package</b> is used to set level to the entire package.
+
+        - The parameter <b>loggername</b> describes the name given in Logger.getLogger("Loggername").
+
+        - The parameter <b>level</b> is used to set the level of a package or a loggername.
+
+        - The below level logs will be lost till reset.
+
+        - <b>The log level changes will be lost on App server restarts.</b>
+
+        - Hierarchy of Level - OFF, SEVERE, WARNING, INFO, CONFIG, FINE, FINER, FINEST, ALL.
