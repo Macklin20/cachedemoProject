@@ -1,4 +1,4 @@
-package com.zoho.externalservices;
+package com.zoho.framework;
 
 import com.zoho.interfaces.CopyFromDisk;
 import com.zoho.interfaces.StoreData;
