@@ -5,7 +5,7 @@ import java.io.IOException;
 
 import com.zoho.interfaces.CopyFromDisk;
 import com.zoho.interfaces.Reading;
-import com.zoho.externalservices.CopyFromDiskToInMemoryCache;
+import com.zoho.framework.CopyFromDiskToInMemoryCache;
 
 public class ReadingFromDisk implements Reading
 {
