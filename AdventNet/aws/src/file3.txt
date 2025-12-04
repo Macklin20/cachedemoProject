@@ -1,0 +1,6 @@
+helloo
+all
+java 
+python
+linux
+os

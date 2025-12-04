@@ -1,0 +1,11 @@
+<b>REMOVEAWSADAPTERCONF(2)		AWS Commands		REMOVEAWSADAPTERCONF(2)</b>
+
+<b>NAME</b>
+	removeawsadapterconf - To remove a conf in awsadapterconf.properties
+
+<b>SYNOPSIS</b>
+	removeawsadapterconf [-ck confkey]
+
+<b>DESCRIPTION</b>
+	<b>Mandatory fields:</b>
+		-ck - key value of the conf

@@ -1,0 +1,11 @@
+<b>TPEStats(2) Debug command TPEStats(2)</b>
+
+<b>NAME</b>
+	tpestats - ThreadPoolExecutor Thread Allocation Stats.
+
+<b>SYNOPSIS</b>
+	tpestats [-tname tname]
+
+<b>DESCRIPTION</b>
+	tpestats - It returns the current thread allocation stats.
+	The parameter "tname" is optional which is used to provide thread name.

@@ -1,0 +1,29 @@
+<b>idbloadtest(2)                 		        	Inter DC Bridge Load Test               				IDBLOADTEST(2)</u></b>
+
+<b><u>NAME</u></b>
+        idbloadtest - Do load test to different DCs
+
+<b><u>SYNOPSIS</u></b>
+
+	<b>idbloadtest -opr req</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-c</b> <u>COUNT</u>] [<b>-rt</b> <u>TIMEOUT</u>]
+	<b>idbloadtest -opr timedreq</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-c</b> <u>COUNT</u>] [<b>-rt</b> <u>TIMEOUT</u>] [<b>-time</b> <u>TIMETORUN</u>]
+	<b>idbloadtest -opr data</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-c</b> <u>COUNT</u>]
+	<b>idbloadtest -opr timeddata</b> [<b>-dc</b> <u>DCNAME</u>] [<b>-cl</b> <u>CLUSTER</u>] [<b>-c</b> <u>COUNT</u>] [<b>-time</b> <u>TIMETORUN</u>]
+	<b>idbloadtest -opr status</b> [<b>-bid</b> <u>BATCHID</u>]
+	
+<b><u>DESCRIPTION</u></b>
+	  IDBLoadTest command is used to generate load randomly from many servers and test whether all the data has been received properly across all data centers.
+
+          <b>-opr</b>
+		<b>req</b>, 	Sends Request to specified DC in loop, default count is 1000
+		<b>data</b>, 	Sends data to specified DC in loop, default count is 1000
+		<b>status</b>,	Shows the recent request/data status
+
+          <b>-c</b>, 		Specifies the count of test messages needed to send
+          <b>-bid</b>,		Use batchid to see the <b>status of the batch</b> sent
+          <b>-t</b>, 		The sleep time between each message which is being sent
+          <b>-time</b>, 	The total time to which the loadtest should run. This option works with timedreq or timeddata.
+          <b>-dc</b>, 		Sends data to the specified dcname (sendRequestToDc), if not specified, will send to DrDc
+          <b>-cl</b>, 		Sends data to the <b>specified cluster</b>, if not specified will send to same cluster from which command is executed.
+          <b>-rt</b>, 		It is to specify the timeout parameter for request.
+          <b>-s</b>,		Size of the data in Kb.

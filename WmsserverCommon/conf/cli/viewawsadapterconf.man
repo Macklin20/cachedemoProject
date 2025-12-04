@@ -1,0 +1,10 @@
+<b>VIEWAWSADAPTERCONF(2)		AWS Commands		VIEWAWSADAPTERCONF(2)</b>
+
+<b>NAME</b>
+	viewawsadapterconf - To view awsadapterconf.properties file
+
+<b>SYNOPSIS</b>
+	viewawsadapterconf
+
+<b>DESCRIPTION</b>
+	viewawsadapterconf -- No need to mention conf file name, simply type this command, you can view the awsadapterconf.properties

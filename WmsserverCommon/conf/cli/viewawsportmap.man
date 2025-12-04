@@ -1,0 +1,10 @@
+<b>VIEWAWSPORTMAP(2)		AWS Commands		VIEWAWSPORTMAP(2)</b>
+
+<b>NAME</b>
+	viewawsportmap - To view portengine.properties file
+
+<b>SYNOPSIS</b>
+	viewawsportmap
+
+<b>DESCRIPTION</b>
+	viewawsportmap -- No need to mention conf file name, simply type this command, you can view the portengine.properties

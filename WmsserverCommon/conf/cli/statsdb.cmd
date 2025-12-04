@@ -1,0 +1,9 @@
+render=json
+usage=statsdb -opr [-s statKey] [-sk statKeys] [-sv statValue]
+-opr=opr
+-sk=statkey
+-sv=statvalue
+-st=stattype
+-db=database
+-time=time
+$serveropr=statsdb

@@ -1,0 +1,10 @@
+Configurations Command
+
+NAME
+        configurations - to view stale keys in configurations
+
+SYNOPSIS
+        configurations -stale
+
+DESCRIPTION
+        - to view stale keys in configurations

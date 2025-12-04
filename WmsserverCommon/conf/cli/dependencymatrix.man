@@ -1,0 +1,11 @@
+Dependency Matrix Command
+
+NAME
+        dependencymatrix - get current activity running in server
+
+SYNOPSIS
+        dependencymatrix
+        opr - get
+
+DESCRIPTION
+        - get current map of the server

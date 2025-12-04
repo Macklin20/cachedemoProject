@@ -1,0 +1,1501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- $Id$ -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:attributeGroup name="commonUrlGroup">
+  	  <xs:attribute name="dynamic-throttles" type="xs:boolean"/>
+  	  <xs:attribute name="throttle-credit-score" type="xs:integer"/>
+      <xs:attribute name="webhook-access-method" type="xs:string"/>
+      <xs:attribute name="webhook-url" type="xs:boolean"/>
+      <xs:attribute name="authentication">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="required|optional|public"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="system-auth">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="required|optional"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="method" type="xs:string"/>
+      <xs:attribute name="url-type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="dynamic|multiple"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="scoped-services" type="xs:string"/>
+      <xs:attribute name="api" type="xs:boolean"/>
+      <xs:attribute name="isc" type="xs:boolean"/>
+      <xs:attribute name="iscscope"/>
+      <xs:attribute name="apiscope"/>
+      <xs:attribute name="runas-groupid-param"/>
+      <xs:attribute name="runas-grouptype-param"/>
+      <xs:attribute name="xss" type="xs:boolean"/>
+      <xs:attribute name="csrf" type="xs:boolean"/>
+      <xs:attribute name="login-throwerror" type="xs:boolean"/>
+      <xs:attribute name="description"/>
+      <xs:attribute name="operation-type"/>
+      <xs:attribute name="zs-module"/>
+      <xs:attribute name="zs-sub-module"/>
+      <xs:attribute name="zs-operation"/>
+      <xs:attribute name="duration" type="xs:string"/>
+      <xs:attribute name="internal" type="xs:boolean" />
+      <xs:attribute name="hip" type="xs:boolean"/>
+      <xs:attribute name="dynamic-params" type="xs:boolean"/>
+      <xs:attribute name="lock-period" type="xs:string"/>
+      <xs:attribute name="operation-param" type="xs:NCName"/>
+      <xs:attribute name="operation-value"/>
+      <xs:attribute name="path"/>
+      <xs:attribute name="path-regex" type="xs:boolean"/>
+      <xs:attribute name="prefix" type="xs:string"/>
+      <xs:attribute name="redirect"/>
+      <xs:attribute name="roles"/>
+      <xs:attribute name="threshold" type="xs:integer"/>
+      <xs:attribute name="max-request-size" type="xs:integer"/>
+      <xs:attribute name="file-upload-max-size" type="xs:integer"/>
+      <xs:attribute name="trusted" type="xs:boolean"/>
+      <xs:attribute name="user" type="xs:boolean"/>
+      <xs:attribute name="throwallerrors" type="xs:boolean"/>
+      <xs:attribute name="dos-cookie" type="xs:boolean"/>
+      <xs:attribute name="response-json-impurity"/>
+      <xs:attribute name="internalortrusted" type="xs:boolean"/>
+      <xs:attribute name="disable-extraparam" type="xs:boolean"/>
+      <xs:attribute name="app-account-member-roles" type="xs:string"/>
+      <xs:attribute name="oauthscope">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9,_\-\.]+"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="org-oauthscope">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9,_\-\.]+"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="auth-type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9,_\-]+"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="ignore-extraparam" type="xs:boolean"/>
+      <xs:attribute name="captcha-verification" type="xs:boolean"/>
+      <xs:attribute name="dc-system-auth" type="xs:boolean"/>
+      <xs:attribute name="error-page" type="xs:boolean"/>
+      <xs:attribute name="set-csrf-cookie" type="xs:boolean"/>
+      <xs:attribute name="request-dispatch-uri-pattern"/>
+      <xs:attribute name="skip-ro-check" type="xs:boolean"/>
+      <xs:attribute name="allow-access-for">
+      	<xs:simpleType>
+      		<xs:restriction base="xs:string">
+            <xs:pattern value="support|devops"/>
+          </xs:restriction>
+      	</xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="disable-dos-control" type="xs:boolean"/>
+      <xs:attribute name="fileupload-after-authentication" type="xs:boolean"/>
+      <xs:attribute name="request-partial-payload-encryption" type="xs:boolean"/>
+      <xs:attribute name="response-payload-encryption" type="xs:boolean"/>
+      <xs:attribute name="impact-type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="static|dynamic"/>
+          </xs:restriction>
+        </xs:simpleType>
+     </xs:attribute>
+     <xs:attribute name="impact-level" type="xs:integer"/>
+     <xs:attribute name="impact-scope">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="User|Self|Org|App|Platform|Infrastructure"/>
+          </xs:restriction>
+        </xs:simpleType>
+     </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="urlGroup">
+     <xs:attributeGroup ref="commonUrlGroup"/>
+     <xs:attribute name="parse-request-body" type="xs:boolean"/>
+     <xs:attribute name="parse-multipart-offline" type="xs:boolean"/>
+     <xs:attribute name="parts-configured-for-mutlipart" type="xs:boolean"/>
+     <xs:attribute name="disable-get-api-csrf" type="xs:boolean"/>
+     <xs:attribute name="requestbody-required-for-verification" type="xs:boolean"/>
+     <xs:attribute name="disable-csrf-cookie-addition-for-unauth-url" type="xs:boolean"/>
+     <xs:attribute name="dynamic-redirect" type="xs:boolean" />
+     <xs:attribute name="skip-inputstream-validation" type="xs:boolean"/>
+     <xs:attribute name="dynamic-parse-request-body" type="xs:boolean"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="urlsGroup">
+      <xs:attributeGroup ref="commonUrlGroup"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="urlThrottle">
+      <xs:attribute name="duration" type="xs:string"/>
+      <xs:attribute name="threshold" type="xs:positiveInteger" use="required"/>
+      <xs:attribute name="lock-period" type="xs:string"/>
+      <xs:attribute name="hip" type="xs:boolean"/>
+      <xs:attribute name="watch-time" type="xs:string"/>
+      <xs:attribute name="violation-limit" type="xs:positiveInteger"/>
+      <xs:attribute name="lock-factor">
+        <xs:simpleType>
+          <xs:restriction base="xs:positiveInteger">
+            <xs:pattern value="[2-9][0-9]*"></xs:pattern>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+  </xs:attributeGroup>
+
+
+  <xs:attributeGroup name="paramGroup">
+      <xs:attribute name="name" use="required" />
+      <xs:attribute name="max-import-file-size" type="xs:integer"/>
+      <xs:attributeGroup ref="commonParamGroup"/>
+      <xs:attributeGroup ref="commonFileGroup"/>
+	  <xs:attributeGroup ref="maskGroup"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="maskGroup">
+      <xs:attribute name="mask">
+      	 <xs:simpleType>
+          <xs:restriction base="xs:string">
+         <xs:pattern value="required|partial"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="preserve-chars">
+       <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:pattern value="((\d+),)?(\d+)"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="preserve-chars-limit">
+       <xs:simpleType>
+          <xs:restriction base="xs:integer">
+            <xs:minInclusive value="0"/>
+      		<xs:maxInclusive value="50"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="commonParamGroup">
+      <xs:attribute name="range" type="xs:string"/>
+      <xs:attribute name="description"/>
+      <xs:attribute name="max-len" type="xs:integer"/>
+      <xs:attribute name="max-occurrences" type="xs:integer"/>
+      <xs:attribute name="min-len" type="xs:integer"/>
+      <xs:attribute name="min-occurrences" type="xs:integer"/>
+      <xs:attribute name="precision" type="xs:integer"/>
+      <xs:attribute name="name-regex" type="xs:boolean" />
+      <xs:attribute name="deltacontent" type="xs:boolean"/>
+      <xs:attribute name="regex"/>
+      <xs:attribute name="trim" type="xs:boolean"/>
+      <xs:attribute name="split"/>
+      <xs:attribute name="type" type="paramtypes"/>
+      <xs:attribute name="format">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+         <xs:pattern value="Default|Excel|InformixUnload|InformixUnloadCsv|MySQL|RFC4180|TDF"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="antispam" type="xs:boolean"/>
+      <xs:attribute name="xss" type="xs:NCName"/>
+      <xs:attribute name="default"/>
+      <xs:attribute name="decrypt" type="xs:boolean"/>
+      <xs:attribute name="secret" type="xs:boolean"/>
+      <xs:attribute name="decrypt-label" type="xs:string"/>
+      <xs:attribute name="template" type="xs:string"/>
+      <xs:attribute name="filter-matched-content" type="xs:boolean"/>
+      <xs:attribute name="replacement-string" type="xs:string"/>
+      <xs:attribute name="xml-schema-validation" type="xs:boolean"/>
+      <xs:attribute name="xml-schema" type="xs:string"/>
+      <xs:attribute name="allow-empty" type="xs:boolean"/>
+      <xs:attribute name="allow-invalid" type="xs:boolean"/>
+      <xs:attribute name="label"/>
+      <xs:attribute name="array-size" type="arraysizes"/>
+      <xs:attribute name="dynamic-template-key-regex" type="xs:string"/>
+      <xs:attribute name="throw-all-json-error" type="xs:boolean"/>
+      <xs:attribute name="dynamic-json-template" type="xs:boolean"/>
+      <xs:attribute name="normalize" type="xs:boolean"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="inputstreamGroup">
+      <xs:attribute name="description"/>
+      <xs:attribute name="max-len" type="xs:integer"/>
+      <xs:attribute name="min-len" type="xs:integer"/>
+      <xs:attribute name="precision" type="xs:integer"/>
+      <xs:attribute name="regex"/>
+      <xs:attribute name="type">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+         <xs:pattern value="boolean|char|short|int|long|float|properties|csv|double|bigdecimal|JSONObject|JSONArray|JSONObject\|JSONArray|vcardArray|cleartext:check|cleartext:filter|cleartext:removehtmlentities|String|xml|binary"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="format">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+         <xs:pattern value="Default|Excel|InformixUnload|InformixUnloadCsv|MySQL|RFC4180|TDF"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="xss" type="xs:NCName"/>
+      <xs:attribute name="default"/>
+      <xs:attribute name="decrypt" type="xs:boolean"/>
+      <xs:attribute name="secret" type="xs:boolean"/>
+      <xs:attribute name="decrypt-label" type="xs:string"/>
+      <xs:attribute name="template" type="xs:string"/>
+      <xs:attribute name="filter-matched-content" type="xs:boolean"/>
+      <xs:attribute name="replacement-string" type="xs:string"/>
+      <xs:attribute name="non-empty" type="xs:boolean"/>
+      <xs:attribute name="xml-schema-validation" type="xs:boolean"/>
+      <xs:attribute name="xml-schema" type="xs:string"/>
+      <xs:attribute name="allow-invalid" type="xs:boolean"/>
+      <xs:attribute name="array-size" type="arraysizes"/>
+      <xs:attribute name="dynamic-template-key-regex" type="xs:string"/>
+      <xs:attribute name="throw-all-json-error" type="xs:boolean"/>
+      <xs:attribute name="trim" type="xs:boolean"/>
+      <xs:attribute name="validation-mode">
+      	<xs:simpleType>
+      		<xs:restriction base="xs:string">
+            <xs:pattern value="log|error"/>
+          </xs:restriction>
+      	</xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="max-size" type="xs:integer"/>
+      <xs:attribute name="import-file" type="xs:boolean"/>
+      <xs:attributeGroup ref="commonFileGroup"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="fileGroup">
+      <xs:attribute name="max-size" type="xs:integer"/>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="name-regex" type="xs:boolean" />
+      <xs:attribute name="description"/>
+      <xs:attribute name="xss" type="xs:NCName"/>
+      <xs:attribute name="allow-empty" type="xs:boolean"/>
+      <xs:attribute name="limit"  type="xs:string"/>
+      <xs:attribute name="mandatory"  type="xs:boolean"/>
+      <xs:attribute name="continue-onerror" type="xs:boolean"/>
+     <xs:attribute name="zip-sanitizer-name" type="xs:string"/>
+      <xs:attribute name="type">
+      	<xs:simpleType>
+      		<xs:restriction base="xs:string">
+      			<xs:enumeration value="csv"/>
+      			<xs:enumeration value="image"/>
+      		</xs:restriction>
+      	</xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="template" type="xs:NCName"/>
+      <xs:attribute name="format">
+        <xs:simpleType>
+        	<xs:restriction base="xs:string">
+	      		<xs:enumeration value="Default"/>
+	      		<xs:enumeration value="Excel"/>
+	      		<xs:enumeration value="InformixUnload"/>
+	      		<xs:enumeration value="InformixUnloadCsv"/>
+	      		<xs:enumeration value="MySQL"/>
+	      		<xs:enumeration value="RFC4180"/>
+	      		<xs:enumeration value="TDF"/>
+      		</xs:restriction>
+        </xs:simpleType>
+      </xs:attribute>
+      <xs:attributeGroup ref="commonFileGroup"/>
+      <xs:attribute name="decrypt" type="xs:boolean"/>
+  </xs:attributeGroup>
+
+  <xs:attributeGroup name="commonFileGroup">
+      <xs:attribute name="allowed-content-types" type="xs:string"/>
+      <xs:attribute name="content-type-name" type="xs:string"/>
+      <xs:attribute name="import-url" type="xs:boolean"/>
+      <xs:attribute name="import-url-redirect" type="xs:boolean"/>
+      <xs:attribute name="allowed-extensions"/>
+      <xs:attribute name="disallowed-extensions" type="xs:string"/>
+      <xs:attribute name="antivirus" type="xs:boolean"/>
+      <xs:attribute name="av-threshold"  type="xs:integer"/>
+      <xs:attributeGroup ref="commonImageFileGroup"/>
+  </xs:attributeGroup>
+
+   <xs:attributeGroup name="commonImageFileGroup">
+      <xs:attribute name="remove-exif" type="xs:boolean"/>
+      <xs:attribute name="image-dimensions-check"  type="xs:boolean"/>
+      <xs:attribute name="max-image-area-in-pixels" type="xs:long"/>  
+      <xs:attribute name="max-sub-images" type="xs:integer"/>  
+  </xs:attributeGroup>
+  
+  <xs:group name="securitychoice">
+    <xs:choice>
+      <xs:element ref="acl" />
+      <xs:element ref="cache-configurations" />
+      <xs:element ref="resources" />
+      <xs:element ref="extensions" />
+      <xs:element ref="content-types" />
+      <xs:element ref="defaultparams" />
+      <xs:element ref="extraparam" />
+      <xs:element ref="extrakey" />
+      <xs:element ref="properties" />
+      <xs:element ref="regexes" />
+      <xs:element ref="urls" />
+      <xs:element ref="url-validators" />
+      <xs:element ref="xsspatterns" />
+      <xs:element ref="jsontemplates" />
+      <xs:element ref="templates" />
+      <xs:element ref="param-groups" />
+      <xs:element ref="jsonkey-groups" />
+      <xs:element ref="safe-response-headers" />
+      <xs:element ref="internal-request-headers"/>
+      <xs:element ref="default-response-headers" />
+      <xs:element ref="default-request-headers" />
+      <xs:element ref="proxy-policy" />
+      <xs:element ref="xml-schemas" />
+      <xs:element ref="zip-sanitizers" />
+			<xs:element ref="pii-detector"/>
+      <xs:element ref="throttles"/>
+      <xs:element ref="exceptions" />
+      <xs:element ref="blacklist-rules" />
+    </xs:choice>
+  </xs:group>
+ 
+  <xs:element name="exceptions">
+  		<xs:complexType>
+  			<xs:choice>
+  				<xs:element ref="exception" maxOccurs="unbounded"/>
+  			</xs:choice>
+  		</xs:complexType>
+  </xs:element>
+  
+  <xs:element name="exception">
+  	<xs:complexType>
+  		<xs:attribute name="name" type="xs:string" use="required"/>
+  		<xs:attribute name="status-code" use="required">
+  			<xs:simpleType>
+  				<xs:restriction base="xs:positiveInteger">
+  					<xs:pattern value="[1-5][0-9][0-9]" />
+  				</xs:restriction>
+  			</xs:simpleType>
+  		</xs:attribute>
+  		<xs:attribute  name="status-message" type="xs:string"/>  	
+  	</xs:complexType>
+  </xs:element>
+
+  <xs:element name="security">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element ref="proxies"/>
+        <xs:choice maxOccurs="unbounded">
+          <xs:group ref="securitychoice"></xs:group>
+       </xs:choice>
+      </xs:choice>
+      <xs:attribute name="name"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="proxies">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="proxy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="proxy">
+    <xs:complexType>
+      <xs:attribute name="path" use="required"/>
+      <xs:attribute name="remote-server" use="required"/>
+      <xs:attribute name="remote-path"/>
+      <xs:attribute name="service-params"/>
+      <xs:attribute name="path-regex" type="xs:boolean"/>
+      <xs:attribute name="allow-cookie" type="xs:boolean"/>
+      <xs:attribute name="allow-headers" type="xs:boolean"/>
+      <xs:attribute name="allow-querystring" type="xs:boolean"/>
+      <xs:attribute name="allow-body" type="xs:boolean"/>
+      <xs:attribute name="exclude-headers" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jsontemplates" type="jsontemplatescomplextype"/>
+  <xs:element name="jsontemplate" type="jsontemplatecomplextype"/>
+  <xs:attributeGroup name="jsonTemplateGroup">
+  <xs:attribute name="name" type="xs:string" />
+  <xs:attribute name="disable-extra-key" type="xs:boolean" />
+  <xs:attribute name="ignore-extrakey" type="xs:boolean" />
+  <xs:attribute name="continue-onerror" type="xs:boolean"/>
+  </xs:attributeGroup>
+  <xs:element name="key-group">
+  <xs:complexType>
+      <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="templates">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="template"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="template">
+    <xs:complexType >
+       <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="key"/>
+       </xs:choice>
+     <xs:attribute name="name" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="param-groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="param-group"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="param-group">
+    <xs:complexType mixed="true" >
+      <xs:choice maxOccurs="unbounded" minOccurs="0">
+        <xs:element  ref="param"/>
+        <xs:element name="or-criteria" type="orcriteriaparam"/>
+      </xs:choice>
+     <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jsonkey-groups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="jsonkey-group"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="jsonkey-group">
+    <xs:complexType mixed="true" >
+      <xs:choice maxOccurs="unbounded">
+        <xs:element maxOccurs="unbounded" ref="key"/>
+        <xs:element name="or-criteria" type="orcriteriakey"/>
+      </xs:choice>
+     <xs:attribute name="name" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content-types">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="content-type"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="content-type">
+    <xs:complexType>
+    	<xs:choice minOccurs="0" maxOccurs="unbounded">
+    		<xs:element name="value">
+                	<xs:simpleType>
+                  		<xs:restriction base="xs:string"><xs:pattern value="((application|text|image|audio|video|model|chemical|message|multipart|x-conference)/[a-z0-9_.+-; =]+)|(application|text|image|audio|video|model|chemical|message|multipart|x-conference)"></xs:pattern></xs:restriction>
+               		 </xs:simpleType>
+              	</xs:element>
+      	</xs:choice>
+	<xs:attribute name="name" use="required" type="xs:NCName"/>
+	<xs:attribute name="content-types"/>
+      	<xs:attribute name="extends" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="defaultparams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="param"/>
+      </xs:sequence>
+      <xs:attribute name="allow-override" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extraparam" type="extraparam"/>
+
+  <xs:complexType name="extraparam">
+     <xs:attributeGroup ref="commonParamGroup"/>
+     <xs:attribute name="limit" type="xs:integer"/>
+  </xs:complexType>
+
+  <xs:element name="properties">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="property"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+	<xs:element name="property">
+	    <xs:complexType>
+	        <xs:attribute name="name" use="required">
+	            <xs:simpleType>
+	                <xs:restriction base="xs:string">
+	                    <xs:enumeration value="disable.path.parameter.uri.decoding.check"/>
+	                    <xs:enumeration value="allow.invalid.value"/>
+	                    <xs:enumeration value="json.invalid.list"/>
+	                    <xs:enumeration value="enable.x.http.method.override.option"/>
+	                    <xs:enumeration value="enable.file.rule.override.option"/>
+	                    <xs:enumeration value="allowed.http.override.methods"/>
+	                    <xs:enumeration value="csrf.cookie.name"/>
+	                    <xs:enumeration value="csrf.param.name"/>
+	                    <xs:enumeration value="captcha.url"/>
+	                    <xs:enumeration value="com.adventnet.iam.secretkey"/>
+	                    <xs:enumeration value="com.adventnet.iam.cryptolendelim"/>
+	                    <xs:enumeration value="use.iam"/>
+	                    <xs:enumeration value="xss.enable.timeoutmatcher"/>
+	                    <xs:enumeration value="timeoutmatcher.maxthreads"/>
+	                    <xs:enumeration value="timeoutmatcher.timeoutinmillis"/>
+	                    <xs:enumeration value="trusted.ip.pattern"/>
+	                    <xs:enumeration value="antivirus.host"/>
+	                    <xs:enumeration value="antivirus.port"/>
+	                    <xs:enumeration value="antivirus.numberof.persistant.connections"/>
+	                    <xs:enumeration value="antivirus.readtimeout"/>
+	                    <xs:enumeration value="antivirus.connection.timeout"/>
+	                    <xs:enumeration value="allow.empty.value"/>
+	                    <xs:enumeration value="request.encoding"/>
+	                    <xs:enumeration value="response.encoding"/>
+	                    <xs:enumeration value="ignore.trailing.slash"/>
+	                    <xs:enumeration value="enable.xssfilter.log"/>
+	                    <xs:enumeration value="xssfilter.log.maxsize"/>
+	                    <xs:enumeration value="xss.detect.pattern"/>
+	                    <xs:enumeration value="xss.detect.pattern.ext"/>
+	                    <xs:enumeration value="xss.encodecheck.pattern"/>
+	                    <xs:enumeration value="xss.trimctrlchars.pattern"/>
+	                    <xs:enumeration value="proxy.host"/>
+	                    <xs:enumeration value="proxy.port"/>
+	                    <xs:enumeration value="proxy.username"/>
+	                    <xs:enumeration value="proxy.password"/>
+	                    <xs:enumeration value="set.csrf.cookie"/>
+	                    <xs:enumeration value="ticket.cache.validity"/>
+	                    <xs:enumeration value="com.adventnet.iam.internal.server"/>
+	                    <xs:enumeration value="com.adventnet.iam.apikey"/>
+	                    <xs:enumeration value="com.adventnet.iam.handler"/>
+	                    <xs:enumeration value="service.name"/>
+	                    <xs:enumeration value="login.page"/>
+	                    <xs:enumeration value="logout.page"/>
+	                    <xs:enumeration value="is.zuid"/>
+	                    <xs:enumeration value="disable.ie.cache"/>
+	                    <xs:enumeration value="disable.ie.nocache"/>
+	                    <xs:enumeration value="com.adventnet.iam.security.provider"/>
+	                    <xs:enumeration value="is.nonpersistentscan"/>
+	                    <xs:enumeration value="internal.mailwatch.server.url"/>
+	                    <xs:enumeration value="upload.filerule.connectiontimeout"/>
+	                    <xs:enumeration value="upload.filerule.readtimeout"/>
+	                    <xs:enumeration value="enable.xsspattern.detect"/>
+	                    <xs:enumeration value="readonly.mode"/>
+	                    <xs:enumeration value="enable.currentuser.cache"/>
+	                    <xs:enumeration value="com.adventnet.iam.authentication.provider"/>
+	                    <xs:enumeration value="internalrequest.privatekey"/>
+	                    <xs:enumeration value="com.zoho.cs.handler"/>
+	                    <xs:enumeration value="com.zoho.cs.internal.server"/>
+	                    <xs:enumeration value="com.zoho.client.handler"/>
+	                    <xs:enumeration value="isc.signature.expiry.time"/>
+	                    <xs:enumeration value="disable.authcsrf"/>
+	                    <xs:enumeration value="csrf.migration"/>
+	                    <xs:enumeration value="soid.migration.mode"/>
+	                    <xs:enumeration value="disable.iam.soid"/>
+	                    <xs:enumeration value="enable.request.options"/>
+	                    <xs:enumeration value="disable.xssfilter.patterndetect"/>
+	                    <xs:enumeration value="enable.response.send.error"/>
+	                    <xs:enumeration value="mask.secret.param.logging"/>
+	                    <xs:enumeration value="iscticket.cache.validity"/>
+	                    <xs:enumeration value="com.zoho.zohoone.handler"/>
+	                    <xs:enumeration value="disable.get.api.csrf.check"/>
+	                    <xs:enumeration value="content.type.detect.option"/>
+	                    <xs:enumeration value="enable.clamav.instrumentation"/>
+	                    <xs:enumeration value="uri.ignore.prefix"/>
+	                    <xs:enumeration value="error.label"/>
+	                    <xs:enumeration value="log.response"/>
+	                    <xs:enumeration value="use.iam.login"/>
+	                    <xs:enumeration value="request.header.validation.mode"/>
+	                    <xs:enumeration value="enable.patch.method.min.occurrence.check"/>
+	                    <xs:enumeration value="custom.request.methods"/>
+	                    <xs:enumeration value="disable.put.minoccur.check"/>
+	                    <xs:enumeration value="enable.appsense"/>
+	                    <xs:enumeration value="zohosecurity.plugin"/>
+	                    <xs:enumeration value="allow.import.url.redirect"/>
+	                    <xs:enumeration value="ignore.extra.param"/>
+	                    <xs:enumeration value="ignore.extra.key"/>
+	                    <xs:enumeration value="captcha.image.dimensions"/>
+	                    <xs:enumeration value="set.api.rate.limit.response.header"/>
+	                    <xs:enumeration value="disable.service.url.throttles"/>
+	                    <xs:enumeration value="convert.service.url.rolling.throttles.into.appserver"/>
+	                    <xs:enumeration value="enable.secret.param.logging.mask"/>
+	                    <xs:enumeration value="url.static.version"/>
+	                    <xs:enumeration value="enable.hsts"/>
+	                    <xs:enumeration value="hsts.allowed.domains"/>
+	                    <xs:enumeration value="allow.proxy.url.redirect"/>
+	                    <xs:enumeration value="url.redirect.maxlimit"/>
+	                    <xs:enumeration value="enable.post.method.redirect"/>
+	                    <xs:enumeration value="log.push.security.exception"/>
+	                    <xs:enumeration value="dos.accessinfo.expiry.schedule.timeinterval"/>
+	                    <xs:enumeration value="secret.request.param.names"/>
+	                    <xs:enumeration value="secret.request.header.names"/>
+	                    <xs:enumeration value="secret.response.header.names"/>
+	                    <xs:enumeration value="hsts.forceful.redirection"/>
+	                    <xs:enumeration value="log.inputstream"/>
+	                    <xs:enumeration value="dynamic.params.max.occurrence.limit"/>
+	                    <xs:enumeration value="handle.errorpage.hip"/>
+	                    <xs:enumeration value="handle.errorpage.json.response"/>
+	                    <xs:enumeration value="pattern.matcher.timeoutinmillis"/>
+	                    <xs:enumeration value="pattern.matcher.max.iterationcount"/>
+	                    <xs:enumeration value="mask.all.paramvalues.on.error"/>
+	                    <xs:enumeration value="enable.pii.detector"/>
+	                    <xs:enumeration value="inputstream.validation.mode"/>
+	                    <xs:enumeration value="enable.individual.occurrence.check.for.dynamic.params"/>
+	                    <xs:enumeration value="enable.min.occurrence.check.for.empty.jsonobject"/>
+	                    <xs:enumeration value="disable.redis.instrumentation"/>
+	                    <xs:enumeration value="enable.tika.file.content.and.name.based.detection"/>
+	                    <xs:enumeration value="pattern.matcher.mode"/>
+	                    <xs:enumeration value="error.page.validation.mode"/>
+	                    <xs:enumeration value="enable.trim"/>
+	                    <xs:enumeration value="multi.av.config.provider"/>
+	                    <xs:enumeration value="icap.av.config"/>
+	                    <xs:enumeration value="restapi.av.config"/>
+	                    <xs:enumeration value="csrf.cookie.samesite.mode"/>
+	                    <xs:enumeration value="enable.csrf.samesite.strict.tmpcookie"/>
+	                    <xs:enumeration value="start.live.window.cleaner.scheduler"/>
+	                    <xs:enumeration value="block.request.on.dos.cache.exception"/>
+	                    <xs:enumeration value="allowed.user.agents"/>
+	                    <xs:enumeration value="proxy.connection.timeout"/>
+	                    <xs:enumeration value="proxy.read.timeout"/>
+	                    <xs:enumeration value="com.zoho.ediscovery.handler"/>
+	                    <xs:enumeration value="xml.schema.version"/>
+	                    <xs:enumeration value="enable.xsd11.cta.full.xpath.checking"/>
+	                    <xs:enumeration value="request.dispatcher.validation.mode"/>
+	                    <xs:enumeration value="normalization.form"/>
+	                    <xs:enumeration value="enable.normalization"/>
+	                    <xs:enumeration value="add.urlparam.frameorigin.to.redirecturl"/>
+	                    <xs:enumeration value="follow.servlet.std.for.urlpath"/>
+	                    <xs:enumeration value="temp.fileupload.dir.monitoring.threshold.size"/>
+	                    <xs:enumeration value="temp.fileupload.dir.monitoring.schedule.time"/>
+	                    <xs:enumeration value="temp.fileupload.dir.monitoring.enable"/>
+	                    <xs:enumeration value="com.zoho.oauth.handler"/>
+	                    <xs:enumeration value="allow.csrf.param.in.querystring"/>
+	                    <xs:enumeration value="enable.host.override"/>
+	                    <xs:enumeration value="forwarded.host.header.name"/>
+	                    <xs:enumeration value="forwarded.host.allowed.domains"/>
+	                    <xs:enumeration value="allow.dot.dot.slash.in.request.uri"/>
+	                    <xs:enumeration value="enable.request.uri.normalization"/>
+	                    <xs:enumeration value="enable.clientuser.authcsrf"/>
+	                    <xs:enumeration value="disable.old.throttle.config"/>
+	                    <xs:enumeration value="mask.extra.param"/>
+	                    <xs:enumeration value="mask.ignore.extra.param"/>
+	                    <xs:enumeration value="ignore.empty.file"/>
+	                    <xs:enumeration value="convert.service.scope.throttles.into.appserver.scope"/>
+	                    <xs:enumeration value="json.api.validation.template.config.files"/>
+	                    <xs:enumeration value="desk.domain"/>
+	                    <xs:enumeration value="com.zoho.rarn.handler"/>
+	                    <xs:enumeration value="disable.cors.check.for.browser.extension.request"/>
+	                    <xs:enumeration value="enable.dos.lockinfo.cache"/>
+	                    <xs:enumeration value="dos.lockinfocache.expiry.schedule.timeinterval"/>
+	                    <xs:enumeration value="dos.scalefactor.lockinfo.cacheaccess.block"/>
+	                    <xs:enumeration value="block.request.on.querystring.decoding.fail"/>
+	                    <xs:enumeration value="enable.fileupload.after.authentication"/>
+	                    <xs:enumeration value="waf.server.host"/>
+	                    <xs:enumeration value="max.len.for.paramvalue.in.application.log"/>
+	                    <xs:enumeration value="set.global.documentbuilderfactory.to.xerces"/>
+	                    <xs:enumeration value="enable.new.throttle"/>
+	                    <xs:enumeration value="enable.requestinfo.filehash"/>
+	                    <xs:enumeration value="requestinfo.filehash.algorithm"/>
+	                    <xs:enumeration value="signature.verification.algorithm"/>
+	                    <xs:enumeration value="dos.rediscache.update.timefactor"/>
+	                    <xs:enumeration value="dos.rediscache.update.countfactor"/>
+	                    <xs:enumeration value="dos.rediscache.update.timeinterval"/>
+	                    <xs:enumeration value="dos.rediscache.update.countlimit"/>
+	                    <xs:enumeration value="dos.cache.update.initial.threshold.percent"/>
+	                    <xs:enumeration value="dos.cache.update.secondary.threshold.percent"/>
+	                    <xs:enumeration value="api.impact.provider"/>
+	                    <xs:enumeration value="signup.page"/>
+	                    <xs:enumeration value="enable.full.payload.encryption"/>
+	                    <xs:enumeration value="enable.request.payload.encryption"/>
+	                    <xs:enumeration value="enable.response.payload.encryption"/>
+	                    <xs:enumeration value="enable.payload.encryption.key.timeout"/>
+	                    <xs:enumeration value="payload.encryption.key.timeoutinmillis"/>
+	                    <xs:enumeration value="payload.encryption.key.manager"/>
+	                    <xs:enumeration value="set.csrf.cookie.httponly"/>
+	                    <xs:enumeration value="enable.uri.ignore.prefix.for.waf.url"/>
+	                    <xs:enumeration value="webhook.url.validation.mode"/>
+	                    <xs:enumeration value="enable.jackson.jsonreadfeatures"/>
+	                    <xs:enumeration value="json.parser.type"/>
+	                    <xs:enumeration value="enable.jwt.systemauth.token.generation"/>
+	                    <xs:enumeration value="enable.jwt.systemauth.token.verification"/>
+	                </xs:restriction>
+	            </xs:simpleType>
+	        </xs:attribute>
+	        <xs:attribute name="value" use="required"/>
+	        <xs:attribute name="description"/>
+	    </xs:complexType>
+	</xs:element>
+	
+  <xs:element name="regexes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="regex"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="regex">
+    <xs:complexType>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="value" use="required"/>
+      <xs:attribute name="timeout" type="xs:integer"/>
+      <xs:attribute name="iteration" type="xs:integer"/>
+      <xs:attribute name="description"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="url-validators">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="scheme" />
+        <xs:element ref="url-validator"/>
+      </xs:choice>
+     </xs:complexType>
+  </xs:element>
+
+   <xs:element name="url-validator">
+     <xs:complexType>
+       <xs:choice minOccurs="0" maxOccurs="unbounded">
+              <xs:element ref="scheme" />
+         </xs:choice>
+         <xs:attribute name="name" type='xs:string'/>
+         <xs:attribute name="mode">
+          <xs:simpleType>
+              <xs:restriction base="xs:string">
+                <xs:pattern value="encode|error"/>
+              </xs:restriction>
+          </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="max-len" type="xs:integer"/>
+         <xs:attribute name="datauri-max-len" type="xs:integer"/>
+     </xs:complexType>
+   </xs:element>
+
+   <xs:element name="scheme">
+     <xs:complexType>
+         <xs:choice minOccurs="0"  maxOccurs="unbounded" >
+              <xs:element name="domainauthority" type="allowedvalues" />
+              <xs:element name="pathinfo" type="allowedvalues" />
+              <xs:element name="querystring" type="allowedvalues" />
+              <xs:element name="fragment" type="allowedvalues"/>
+              <xs:element name="datapart" type="allowedvalues" />
+              <xs:element name="mimetypes" type="allowedvalues" />
+              <xs:element name="charsets" type="allowedvalues" />
+              <xs:element name="encoding" type="allowedvalues"/>
+         </xs:choice>
+         <xs:attribute name="name">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[a-zA-Z0-9\-\.]+(,[a-zA-Z0-9\-\.]+)*"></xs:pattern>
+                </xs:restriction>
+              </xs:simpleType>
+         </xs:attribute>
+     </xs:complexType>
+   </xs:element>
+
+   <xs:complexType name="allowedvalues">
+     <xs:attribute name="allowed-values" type="xs:string"/>
+   </xs:complexType>
+   <xs:group name="urlschoice">
+    <xs:choice>
+        <xs:element ref="url"/>
+        <xs:element ref="param"/>
+        <xs:element ref="params"/>
+    	<xs:element ref="param-group" />
+        <xs:element ref="file"/>
+        <xs:element ref="response"/>
+        <xs:element ref="request" />
+        <xs:element ref="inputstream"/>
+        <xs:element ref="paramorstream"/>
+        <xs:element ref="proxy-policy"/>
+        <xs:element ref="throttles"/>
+        <xs:element ref="throttle"/>
+	<xs:element name="blacklist-rules" type="blacklistrules_urls_level"/>
+      </xs:choice>
+   </xs:group>
+
+  <xs:element name="urls">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+	 <xs:group ref="urlschoice"/>
+      </xs:choice>
+      <xs:attributeGroup ref="urlsGroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:group name="urlchoice">
+    <xs:choice>
+      <xs:element ref="extraparam" />
+      <xs:element ref="file" />
+      <xs:element ref="param" />
+      <xs:element ref="params" />
+      <xs:element ref="param-group" />
+      <xs:element ref="inputstream" />
+	  <xs:element ref="paramorstream"/>
+      <xs:element ref="response" />
+      <xs:element ref="request" />
+      <xs:element ref="proxy-policy" />
+          <xs:element ref="throttles"/>
+          <xs:element ref="throttle"/>
+	  <xs:element name="blacklist-rules" type="blacklistrules_url_level"/>
+    </xs:choice>
+  </xs:group>  
+  <xs:element name="url">
+    <xs:complexType mixed="true" >
+      <xs:choice>
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="urlchoice"></xs:group>
+        </xs:choice>
+      </xs:choice>
+     <xs:attributeGroup ref="urlGroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="throttle">
+    <xs:complexType>
+      <xs:attributeGroup ref="urlThrottle"/>
+    </xs:complexType>
+  </xs:element>
+
+   <xs:element name="cache-configurations">
+    <xs:complexType>
+      <xs:choice>
+        <xs:element name="cache-configuration" minOccurs="1" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:attribute name="pool-name" use="required">
+              <xs:simpleType>
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[a-zA-Z0-9_]{3,20}"></xs:pattern>
+                </xs:restriction>
+              </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="cluster-ip" type="xs:string"/>             
+            <xs:attribute name="cluster-port" type="xs:unsignedInt"/>
+            <xs:attribute name="app-team-cluster" type="xs:boolean"/>
+            <xs:attribute name="sas-dependant" type="xs:boolean"/>
+            <xs:attribute name="sentinels" type="xs:string"/> 
+            <xs:attribute name="master-name" type="xs:string"/>
+            <xs:attribute name="category" type="xs:string"/>
+            <xs:attribute name="shard" type="xs:unsignedInt"/>                         
+            <xs:attribute name="db" type="xs:unsignedInt"/>
+            <xs:attribute name="shard-type" type="xs:string"/>
+            <xs:attribute name="ranges" type="xs:string"/>      
+            <xs:attribute name="max-total" type="xs:unsignedInt"/>
+            <xs:attribute name="max-idle" type="xs:unsignedInt"/>
+            <xs:attribute name="read-timeout" type="xs:unsignedInt"/>  
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="throttles">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+          <xs:element ref="throttle"/>
+        </xs:choice>
+        <xs:attribute name="window" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="LIVE"/>
+              <xs:enumeration value="FIXED"/>
+              <xs:enumeration value="ROLLING"/>
+            <xs:enumeration value="SLIDING"/>             
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="scope" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="APPSERVER"/>
+              <xs:enumeration value="SERVICE"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      <xs:attribute name="key" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:string">
+            <xs:minLength value="5"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+              <xs:attribute name="time-log-interval-duration" type="xs:string"/>
+        <xs:attribute name="name" type="xs:NCName"/>
+        <xs:attribute name="dynamic-throttle" type="xs:boolean"/>
+        <xs:attribute name="credit-based-throttle" type="xs:boolean"/>
+        <xs:attribute name="enable-lockinfo-cache" type="xs:boolean"/>
+        <xs:attribute name="scalefactor-lockinfo-block" type="xs:decimal"/>
+        <xs:attribute name="enable-redis-update-config" type="xs:boolean"/>
+        <xs:attribute name="rediscache-update-timefactor" type="xs:decimal"/>
+        <xs:attribute name="rediscache-update-countfactor" type="xs:decimal"/>
+        <xs:attribute name="rediscache-update-timeinterval" type="xs:integer"/>
+        <xs:attribute name="rediscache-update-countlimit" type="xs:integer"/>
+        <xs:attribute name="shard-type" type="xs:string"/>
+      </xs:complexType>
+    </xs:element>
+
+ <xs:element name="file">
+    <xs:complexType>
+      <xs:choice minOccurs="0">
+        <xs:element ref="filename"/>
+      </xs:choice>
+      <xs:attributeGroup ref="fileGroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xsspatterns">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="xsspattern"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="xsspattern">
+    <xs:complexType mixed="true">
+      <xs:attribute name="allow-doctype" type="xs:boolean"/>
+      <xs:attribute name="balance-html-tags" type="xs:boolean"/>
+      <xs:attribute name="enable-neko-parser-exception-trace" type="xs:boolean"/>
+      <xs:attribute name="xss-filter-type">
+      <xs:simpleType>
+       <xs:restriction base="xs:string">
+         <xs:pattern  value="JTIDY|NEKO|ANTISAMY|ANTISAMY_CSS|ANTISAMY_CSSPROPERTIES"/>
+        </xs:restriction>
+       </xs:simpleType>
+      </xs:attribute>
+      <xs:attribute name="css-hyphen-prefix"/>
+      <xs:attribute name="whitelist-policy" />
+      <xs:attribute name="skip-neko-output-escaping" type="xs:boolean"/>
+      <xs:attribute name="handle-neko-parseerror" type="xs:boolean"/>
+      <xs:attribute name="encode-element-values-markup-entities" type="xs:boolean"/>
+      <xs:attribute name="xss-detect-space-entity-reference" type="xs:boolean"/>
+      <xs:attribute name="extends" type="xs:NCName"/>
+      <xs:attribute name="filter-css-only" type="xs:boolean"/>
+      <xs:attribute name="filter-css-raw-declarations" type="xs:boolean"/>
+      <xs:attribute name="xss-detect-throwerror" type="xs:boolean"/>
+      <xs:attribute name="insert-element-attributes"/>
+      <xs:attribute name="name" use="required" type="xs:NCName"/>
+      <xs:attribute name="remove-attribute-names"/>
+      <xs:attribute name="remove-attribute-values"/>
+      <xs:attribute name="remove-css-property"/>
+      <xs:attribute name="remove-css-value"/>
+      <xs:attribute name="remove-element-attributes"/>
+      <xs:attribute name="remove-element-names"/>
+      <xs:attribute name="allow-element-attributes"/>
+      <xs:attribute name="enable-canonicalize-strict" type="xs:boolean"/>
+      <xs:attribute name="enable-csssyntax-strict" type="xs:boolean"/>
+      <xs:attribute name="remove-commented-css" type="xs:boolean"/>
+      <xs:attribute name="html-dont-decode" type="xs:boolean"/>
+      <xs:attribute name="enable-canonicalization" type="xs:boolean"/>
+      <xs:attribute name="remove-element-values"/>
+      <xs:attribute name="trusted-script-domains"/>
+      <xs:attribute name="whitelisted-script-domains"/>
+      <xs:attribute name="jtidy-critical-parser-errorcodes"/>
+      <xs:attribute name="ignore-meta-charset" type="xs:boolean"/>
+      <xs:attribute name="remove-comments" type="xs:boolean"/>
+      <xs:attribute name="remove-cdata" type="xs:boolean"/>
+      <xs:attribute name="attribute-limit" type="xs:integer"/>
+      <xs:attribute name="remove-import" type="xs:boolean"/>
+      <xs:attribute name="handle-hyphen-prefix" type="xs:boolean"/>
+      <xs:attribute name="parser-mode">
+      	<xs:simpleType>
+       		<xs:restriction base="xs:string">
+         		<xs:pattern  value="DOM|SAX|dom|sax"/>
+        	</xs:restriction>
+       	</xs:simpleType>
+      </xs:attribute>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="params">
+  	<xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+              <xs:element name="or-criteria" type="orcriteriaparam"/>
+              <xs:element ref="param"/>
+         </xs:choice>
+      </xs:complexType>
+  </xs:element>
+  
+   <xs:complexType name="orcriteriaparam">
+      <xs:choice minOccurs="2" maxOccurs="unbounded">
+        <xs:element ref="param" />
+      </xs:choice>
+      <xs:attributeGroup ref="orCriteriaAttrGroup"/>
+   </xs:complexType>
+   
+  <xs:attributeGroup name="orCriteriaAttrGroup">
+  	<xs:attribute name='min-occurrences' type="xs:integer"/>
+    <xs:attribute name='max-occurrences' type="xs:integer"/>
+  </xs:attributeGroup>
+  
+  <xs:element name="param">
+    <xs:complexType>
+      <xs:attributeGroup ref="paramGroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="keys">
+  	<xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+              <xs:element name="or-criteria" type="orcriteriakey"/>
+              <xs:element ref="key"/>
+         </xs:choice>
+      </xs:complexType>
+  </xs:element>
+   <xs:complexType name="orcriteriakey">
+      <xs:choice minOccurs="2" maxOccurs="unbounded">
+        <xs:element ref="key" />
+      </xs:choice>
+      <xs:attributeGroup ref="orCriteriaAttrGroup"/>
+   </xs:complexType>
+  <xs:element name="key">
+    <xs:complexType>
+      <xs:attributeGroup ref="keyAttrGroup"/>
+    </xs:complexType>
+  </xs:element>
+	<xs:element name="value">
+		<xs:complexType>
+			<xs:attribute name='index' type='xs:string' />
+			<xs:attributeGroup ref="commonParamGroup" />
+			<xs:attributeGroup ref="maskGroup" />
+		</xs:complexType>
+	</xs:element>
+  <xs:element name="extrakey" type="extraparam"/>
+  <xs:element name="inputstream">
+    <xs:complexType>
+      <xs:attributeGroup ref="inputstreamGroup"/>
+    </xs:complexType>
+  </xs:element>
+   <xs:element name="paramorstream">
+    <xs:complexType>
+	   <xs:attribute name="name" use="required"/>
+       <xs:attribute name="non-empty" type="xs:boolean"/>
+       <xs:attributeGroup ref="commonParamGroup"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="filename">
+    <xs:complexType>
+     <xs:attributeGroup ref="commonParamGroup"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="response">
+      <xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+              <xs:element name='headers' type='headers' minOccurs='0' maxOccurs='unbounded' />
+              <xs:element ref="log"/>
+         </xs:choice>
+         <xs:attributeGroup ref="disablesafeheadersGroup"/>
+         <xs:attributeGroup ref="disablecacheheadersGroup"/>
+         <xs:attribute name='disable-headers' type='xs:string'/>
+          <xs:attribute name='dynamic-cors-headers' type="xs:boolean"/>
+      </xs:complexType>
+   </xs:element>
+
+   <xs:complexType name="headers">
+      <xs:sequence>
+        <xs:element name='header' type='header' minOccurs='1' maxOccurs='unbounded' />
+      </xs:sequence>
+   </xs:complexType>
+
+    <xs:complexType name="header">
+       <xs:sequence minOccurs="0">
+         <xs:element name="coheader" type="coheader" />
+       </xs:sequence>
+       <xs:attribute name='name' type='xs:string'/>
+       <xs:attribute name='value' type='xs:string'/>
+       <xs:attribute name='default-value' type='xs:string'/>
+       <xs:attribute name='scope' type='xs:string'/>
+	   <xs:attribute name="allowed-services" type="xs:string"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="coheader">
+       <xs:sequence>
+         <xs:element name='header' type='header' minOccurs='1' maxOccurs='unbounded' />
+       </xs:sequence>
+    </xs:complexType>
+
+   <xs:element name="log" >
+  <xs:complexType mixed="true" >
+    <xs:attribute name='size' type="xs:integer" />
+    <xs:attribute name='content-types' type='xs:string' />
+  </xs:complexType>
+</xs:element>
+
+    <xs:element name="safe-response-headers">
+     <xs:complexType>
+         <xs:sequence>
+            <xs:element name='secure-headers' type='headers' minOccurs='1' maxOccurs='unbounded' />
+            <xs:element name='download-headers' type='headers' minOccurs='1' maxOccurs='unbounded' />
+            <xs:element name='json-headers' type='headers' minOccurs='1' maxOccurs='unbounded' />
+            <xs:element name='cache-headers' type='headers' minOccurs='1' maxOccurs='unbounded' />
+            <xs:element name='connection-headers' type='headers' minOccurs='1' maxOccurs='unbounded' />
+         </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+  
+   <xs:element name="default-response-headers">
+     <xs:complexType>
+         <xs:sequence>
+            <xs:element name='header' type='header' minOccurs='0' maxOccurs='unbounded' />
+         </xs:sequence>
+         <xs:attributeGroup ref="disablesafeheadersGroup"/>
+         <xs:attribute name="dynamic-cors-headers" type="xs:boolean"/>
+      </xs:complexType>
+  </xs:element>
+
+  <xs:element name="default-request-headers">
+     <xs:complexType>
+         <xs:choice maxOccurs="1">
+              <xs:element name='headers' type='reqheaders' minOccurs='0' maxOccurs="1"/>
+         </xs:choice>
+     </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="internal-request-headers">
+     <xs:complexType>
+         <xs:sequence>
+            <xs:element name='header' minOccurs='0' maxOccurs='unbounded' >
+            <xs:complexType>
+            <xs:attributeGroup ref="paramGroup"/>
+          </xs:complexType>
+          </xs:element>
+          <xs:element name='cookies' type='cookies' minOccurs="0" maxOccurs="1"/>
+         </xs:sequence>
+      </xs:complexType>
+  </xs:element>
+
+  <xs:element name='request'>
+      <xs:complexType>
+         <xs:choice maxOccurs="1">
+              <xs:element name='headers' type='reqheaders' minOccurs='0' maxOccurs='1' />
+         </xs:choice>
+      </xs:complexType>
+   </xs:element>
+
+<xs:element name="proxy-policy" >
+  <xs:complexType mixed="true" >
+    <xs:attribute name='allowed-services' type='xs:string' />
+  </xs:complexType>
+</xs:element>
+
+  <xs:complexType name="reqheaders">
+      <xs:sequence>
+        <xs:element name='header' minOccurs='0' maxOccurs='unbounded' >
+          <xs:complexType>
+          <xs:attributeGroup ref="paramGroup"/>
+        </xs:complexType>
+        </xs:element>
+        <xs:element name='cookies' type='cookies' minOccurs="0" maxOccurs="1"/>
+        <xs:element name='user-agent' type='user-agent' minOccurs="0" maxOccurs="1" />
+      </xs:sequence>
+   </xs:complexType>
+
+  <xs:complexType name="cookies">
+      <xs:sequence>
+        <xs:element name='cookie' minOccurs='1' maxOccurs='unbounded' >
+          <xs:complexType>
+          <xs:attributeGroup ref="paramGroup"/>
+        </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+
+ <xs:complexType name="user-agent">
+      <xs:sequence>
+        <xs:element name='browser' minOccurs='0' maxOccurs='1' >
+          <xs:complexType>
+          <xs:attributeGroup ref="commonParamGroup"/>
+          <xs:attribute name='major' type='xs:integer'/>
+          <xs:attribute name='minor' type='xs:integer'/>
+        </xs:complexType>
+
+        </xs:element>
+        <xs:element name='os' minOccurs='0' maxOccurs='1' >
+          <xs:complexType>
+          <xs:attributeGroup ref="commonParamGroup"/>
+          <xs:attribute name='major' type='xs:integer'/>
+          <xs:attribute name='minor' type='xs:integer'/>
+        </xs:complexType>
+        </xs:element>
+        <xs:element name='device' minOccurs='0' maxOccurs='1' >
+          <xs:complexType>
+          <xs:attributeGroup ref="commonParamGroup"/>
+          <xs:attribute name='family' type='xs:string'/>
+        </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+
+  <xs:attributeGroup name="disablesafeheadersGroup">
+   <xs:attribute name="disable-safe-headers">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+            <xs:pattern value="(X-Frame-Options|X-Content-Type-Options|X-Download-Options|Content-Disposition|all)(,X-Frame-Options|,X-Content-Type-Options|,X-Download-Options|,Content-Disposition){0,3}"/>
+           </xs:restriction>
+          </xs:simpleType>
+         </xs:attribute>
+  </xs:attributeGroup>
+  
+  <xs:attributeGroup name="disablecacheheadersGroup">
+   <xs:attribute name="disable-cache-headers">
+           <xs:simpleType>
+            <xs:restriction base="xs:string">
+            <xs:pattern value="(Pragma|Cache-Control|Expires|all)(,Pragma|,Cache-Control|,Expires){0,2}"/>
+           </xs:restriction>
+          </xs:simpleType>
+         </xs:attribute>
+  </xs:attributeGroup>
+
+  <xs:element name="acl">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element ref="ace"/>
+      </xs:choice>
+      <xs:attribute name="resource" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ace">
+    <xs:complexType>
+     <xs:attribute name="principal" type="xs:string" use="required"/>
+     <xs:attribute name="operation" type="xs:string" use="required"/>
+     <xs:attribute name="access" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="resources">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="resource"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="resource">
+    <xs:complexType>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="value" use="required"/>
+      <xs:attribute name="pattern" type="xs:boolean"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="extensions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="extension"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="extension">
+    <xs:complexType>
+      <xs:attribute name="name" use="required"/>
+      <xs:attribute name="class" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="xml-schemas">
+    <xs:complexType>
+      <xs:choice maxOccurs="unbounded">
+        <xs:element name="xml-schema">
+      <xs:complexType>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="schema-file" type="xs:string" use="required"/>
+    </xs:complexType>     
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="zip-sanitizers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="zip-sanitizer"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+ <xs:element name="zip-sanitizer">
+    <xs:complexType mixed="true">
+       <xs:attribute name="name" use="required" type="xs:NCName"/>
+       <xs:attribute name="action">
+        <xs:simpleType>
+         <xs:restriction base="xs:string">
+           <xs:pattern  value="error|sanitize"/>
+          </xs:restriction>
+         </xs:simpleType>
+       </xs:attribute>
+       <xs:attribute name="skip-invalid-entries" type="xs:boolean"/>
+      <xs:attribute name="max-extraction-size" type="xs:long"/>  
+      <xs:attribute name="max-files-count" type="xs:integer"/>
+      <xs:attribute name="max-level" type="xs:integer"/>
+      <xs:attribute name="blocked-extensions"/>
+      <xs:attribute name="blocked-content-types"/>
+      <xs:attribute name="allowed-extensions"/>
+      <xs:attribute name="allowed-content-types"/>
+    </xs:complexType>
+  </xs:element>
+    
+  <xs:element name="pii-detector">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" ref="pii-classifier" />
+			</xs:sequence>
+			<xs:attribute name="regex-based" type="xs:boolean" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="pii-classifier">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="1" ref="categories"></xs:element>
+				<xs:element maxOccurs="1" ref="sensitivities"></xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="categories">
+		<xs:complexType>
+			<xs:sequence maxOccurs="13">
+				<xs:element name="category">
+					<xs:complexType>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="Personal|Identity|Place|Education_And_Work|Account|Financial|Authentication_And_Authorization|Internet_And_Telecommunication|Social|Medical|Device_Information|Others|ZOHOPII"></xs:pattern>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="unique-category">
+			<xs:selector xpath="category"/>
+			<xs:field xpath="@value"/>
+		</xs:unique>
+	</xs:element>
+
+	<xs:element name="sensitivities">
+		<xs:complexType>
+			<xs:sequence maxOccurs="3">
+				<xs:element name="sensitivity">
+					<xs:complexType>
+						<xs:attribute name="value">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:pattern value="High|Medium|Low"></xs:pattern>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+		<xs:unique name="unique-sensitivity">
+			<xs:selector xpath="sensitivity"/>
+			<xs:field xpath="@value"/>
+		</xs:unique>
+	</xs:element>
+
+  <xs:element name="blacklist-rules">
+     <xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+              <xs:element name='request-headers' minOccurs='0' maxOccurs="1">
+          <xs:complexType>
+                <xs:choice>
+                <xs:element name="header" minOccurs="1" maxOccurs="unbounded">
+                        <xs:complexType>
+                           <xs:attribute name="name" type="xs:string" use="required" />
+                           <xs:attributeGroup ref="blackListGroup"/>
+                        </xs:complexType>
+                </xs:element>
+              </xs:choice>
+      </xs:complexType>
+           </xs:element>
+            <xs:element name="remoteip" type="ip_blacklist"/>
+        </xs:choice>
+     </xs:complexType>
+  </xs:element>
+     
+  <xs:attributeGroup name="blackListGroup">
+		<xs:attribute name="operator">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+			<xs:pattern value="stringequals|stringcontains|regexmatches|regexfind|startswith|endswith" />
+			</xs:restriction>
+		</xs:simpleType>
+		</xs:attribute>
+  </xs:attributeGroup>
+	
+ <xs:complexType name="ip_blacklist">
+        <xs:choice>
+                <xs:element name="category">
+                        <xs:complexType>
+                                <xs:attribute name="value" use="required">
+                                        <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                        <xs:pattern value="tor" />
+                                                </xs:restriction>
+                                        </xs:simpleType>
+                                </xs:attribute>
+                        </xs:complexType>
+                </xs:element>
+        </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="blacklistrules_url_level">
+  	<xs:choice maxOccurs="unbounded">
+        	<xs:element name="url" maxOccurs="1">
+			<xs:complexType>
+        			<xs:choice>
+                			<xs:element name="path" minOccurs="1" maxOccurs="unbounded">
+                        			<xs:complexType>
+                                			<xs:attribute name="value" type="xs:string" use="required" />
+                                			<xs:attributeGroup ref="blackListGroup"/>
+                        			</xs:complexType>
+                			</xs:element>
+        			</xs:choice>
+  			</xs:complexType>
+		</xs:element>
+                <xs:element name="remoteip" type="ip_blacklist" minOccurs="0" maxOccurs="1"/>
+  	</xs:choice>
+  </xs:complexType>
+  <xs:complexType name="blacklistrules_urls_level">
+        <xs:choice>
+                <xs:element name="remoteip" type="ip_blacklist"/>
+        </xs:choice>
+  </xs:complexType>
+
+	<xs:simpleType name="paramtypes">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="boolean|char|short|int|long|float|double|bigdecimal|properties|csv|JSONObject|JSONArray|JSONObject\|JSONArray|vcardArray|url|cleartext:check|cleartext:filter|cleartext:removehtmlentities|String|xml" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="arraysizes">
+		<xs:restriction base="xs:string">
+			<xs:pattern
+				value="((\d+)-(\d+))|((&lt;=|&gt;=|&lt;|&gt;)?(\d+))" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="jsontemplatescomplextype">
+		<xs:choice maxOccurs="unbounded">
+			<xs:element ref="jsontemplate" />
+			<xs:element ref="key" />
+			<xs:element ref="extrakey" />
+			<xs:element ref="keys" />
+		</xs:choice>
+	</xs:complexType>
+	<xs:complexType name="jsontemplatecomplextype"
+		mixed="true">
+		<xs:choice minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="key" />
+			<xs:element ref="key-group" />
+			<xs:element ref="extrakey" />
+			<xs:element ref="keys" />
+			<xs:element ref="value"/>
+		</xs:choice>
+		<xs:attributeGroup ref="jsonTemplateGroup" />
+	</xs:complexType>
+	<xs:attributeGroup name="keyAttrGroup">
+		<xs:attribute name='name' type='xs:string' />
+		<xs:attribute name='index' type='xs:string' />
+		<xs:attributeGroup ref="commonParamGroup" />
+		<xs:attributeGroup ref="maskGroup" />
+	</xs:attributeGroup>
+</xs:schema>

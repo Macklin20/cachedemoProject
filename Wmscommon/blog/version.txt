@@ -1,0 +1,13 @@
+Module=ZOHOWMS_COMMON
+#BuildLabel=ZOHOWMS_COMMON_Sep_08_2025
+Build_Number=11446889
+Source_Changeset=7e43a8494ea176762fe8428349f2500dd154324d
+BranchName=master
+BuildType=WEBHOST
+Build_Comment=
+Build_Date=08-09-25
+build-timestamp= 1757315755
+Current_Build_Url=https://build.zohocorp.com/zoho/zohowms_common/webhost/master/Sep_08_2025
+JAVA_HOME=/usr/java/zulujdk11.0.6
+Client_Version=v47
+BuildLabel=ZOHOWMS_COMMON_4.14.0

@@ -1,0 +1,11 @@
+render=ordered_json
+usage=idbloadtest -opr req|timedreq|timeddata|data|status [-dc dcname] [-bid batchid] [-t sleeptime] [-time timetorun] [-cl cluster] [-c count] [-rt timeout]
+-opr=operation
+-dc=dc_name
+-bid=batchid
+-cl=cluster
+-c=count
+-time=timetorun
+-t=sleeptime
+-rt=timeout
+-s=size

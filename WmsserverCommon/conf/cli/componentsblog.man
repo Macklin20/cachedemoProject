@@ -1,0 +1,10 @@
+Components Blog Command
+
+NAME
+        componentsblog - get blog data for components
+
+SYNOPSIS
+        componentsblog
+
+DESCRIPTION
+        - get blog data for components

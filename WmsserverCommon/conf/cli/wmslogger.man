@@ -1,0 +1,12 @@
+<b>WMSLogger Command</b>
+
+<b>NAME</b>
+        wmslogger - WMS Logger Handler
+
+<b>SYNOPSIS</b>
+	usage = wmslogger [-opr operation] [-d days] [-cf cfname]
+
+<b>DESCRIPTION</b>
+	Opr - <b>create</b> used to create tables for n days.
+	Opr - <b>delete</b> used to delete a particular cf.
+	Opr - <b>gettables</b> used to get list of available cf.
