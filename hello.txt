@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 hello everyone, testing git repository
 hiii all
 welcome
 hii
+=======
+hello
+>>>>>>> 8138332 (new file: hello.txt)
